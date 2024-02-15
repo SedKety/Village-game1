@@ -23,11 +23,16 @@ public class Movement : MonoBehaviour
     }
     void FixedUpdate()
     {
-        //camera movement
-        transform.Rotate(Input.GetAxisRaw("Mouse X") * mouseSensitivity * Vector3.up);
-        verticalLookRotation -= Input.GetAxisRaw("Mouse Y") * mouseSensitivity;
-        verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90f, 90f);
-        cameraHolder.localEulerAngles = new Vector3(verticalLookRotation, 0, 0);
+        //sorry hessel moest dit er in gooien om de inventory te laten werken
+        if(GameObject.FindAnyObjectByType<InventoryScript>().inventoryOpenOrNot == false)
+        {
+            //camera movement
+            transform.Rotate(Input.GetAxisRaw("Mouse X") * mouseSensitivity * Vector3.up);
+            verticalLookRotation -= Input.GetAxisRaw("Mouse Y") * mouseSensitivity;
+            verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90f, 90f);
+            cameraHolder.localEulerAngles = new Vector3(verticalLookRotation, 0, 0);
+
+        }
 
         //player movement
         hor = Input.GetAxis("Horizontal");

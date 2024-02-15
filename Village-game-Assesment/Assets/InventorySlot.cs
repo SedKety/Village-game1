@@ -26,6 +26,8 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             itemInSlot = true;
             itemSprite.gameObject.SetActive(true);
             physicalItem = inventoryItem.physicalItemObject;
+            nameOfItem.text = inventoryItem.itemName;
+            itemDescription.text = inventoryItem.description;
         }
         else if (inventoryItem == null)
         {
@@ -48,10 +50,5 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         itempickup.selectedSlot = gameObject;
         showDescription.SetActive(true);
-        if (inventoryItem != null)
-        {
-            nameOfItem.text = inventoryItem.itemName;
-            itemDescription.text = inventoryItem.description;
-        }
     }
 }
