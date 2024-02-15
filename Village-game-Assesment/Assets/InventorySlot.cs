@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public Items inventoryItem;
-    public int howManyItems;
     public bool itemInSlot;
     public RawImage itemSprite;
     public TextMeshProUGUI nameOfItem;
@@ -16,14 +15,25 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public GameObject slotSelectedOrNot;
     public GameObject showDescription;
+    public ItemPickupAndItemDrop itempickup;
+    public GameObject physicalItem;
 
     public void Update()
     {
-        if(inventoryItem != null)
+        if (inventoryItem != null)
         {
             itemSprite.texture = inventoryItem.itemPicture.texture;
             itemInSlot = true;
             itemSprite.gameObject.SetActive(true);
+            physicalItem = inventoryItem.physicalItemObject;
+        }
+        else if (inventoryItem == null)
+        {
+            itemSprite.gameObject.SetActive(false);
+            itemInSlot = false;
+            nameOfItem.text = "Empty";
+            itemDescription.text = "No item in this slot, get one to see its description";
+            physicalItem = null;
         }
     }
     public void OnPointerEnter(PointerEventData eventData)
@@ -36,8 +46,9 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     }
     public void OnPointerClick(PointerEventData eventData)
     {
+        itempickup.selectedSlot = gameObject;
         showDescription.SetActive(true);
-        if(inventoryItem != null)
+        if (inventoryItem != null)
         {
             nameOfItem.text = inventoryItem.itemName;
             itemDescription.text = inventoryItem.description;

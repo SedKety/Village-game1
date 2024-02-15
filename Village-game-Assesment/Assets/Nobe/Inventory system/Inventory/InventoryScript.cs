@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class InventoryScript : MonoBehaviour
 {
-    public List<Items> inventoryItems = new List<Items>();
     public GameObject[] inventorySlots;
     public Items recentlyAddedItem;
 
     public bool inventoryFull;
 
+    public GameObject player;
+    public bool inventoryOpenOrNot;
     public void NewItemAdded()
     {
         if (inventoryFull == false && recentlyAddedItem != null)
@@ -20,7 +21,6 @@ public class InventoryScript : MonoBehaviour
                 if (inventorySlots[i].GetComponent<InventorySlot>().itemInSlot == false)
                 {
                     inventorySlots[i].GetComponent<InventorySlot>().inventoryItem = recentlyAddedItem;
-                    inventoryItems.Add(recentlyAddedItem);
                     recentlyAddedItem = null;
                     break;
                 }
@@ -29,12 +29,26 @@ public class InventoryScript : MonoBehaviour
                     inventoryFull = true;
                 }
             }
-
         }
-        else if(inventoryFull)
+        else if (inventoryFull)
         {
             Debug.Log("Inventory is al vol");
         }
-
+    }
+    public void Update()
+    {
+        if(Input.GetKeyUp(KeyCode.E))
+        {
+            if(inventoryOpenOrNot == false)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                inventoryOpenOrNot = true;
+            }
+            else if(inventoryOpenOrNot == true)
+            {
+                inventoryOpenOrNot= false;
+                Cursor.lockState= CursorLockMode.Locked;
+            }
+        }
     }
 }

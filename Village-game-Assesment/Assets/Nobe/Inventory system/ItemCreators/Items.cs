@@ -11,5 +11,6 @@ public class Items : ScriptableObject
     public string itemName;
     public string description;
     public Sprite itemPicture;
+    public GameObject physicalItemObject;
 }
 

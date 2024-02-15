@@ -16,3 +16,5 @@ MonoBehaviour:
   itemName: Stone
   description: I prefer wood
   itemPicture: {fileID: 21300000, guid: d15acfec4563a1c43a6f7207e0111839, type: 3}
+  physicalItemObject: {fileID: 7324046556342770252, guid: c03306a85dd56994b85ebf59f8bdbe7b,
+    type: 3}
