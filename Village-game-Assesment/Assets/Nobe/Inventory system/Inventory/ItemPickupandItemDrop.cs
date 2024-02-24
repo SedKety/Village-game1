@@ -1,5 +1,7 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -26,11 +28,11 @@ public class ItemPickupAndItemDrop : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (selectedSlot.GetComponent<InventorySlot>().physicalItem != null){
+            if (selectedSlot && selectedSlot.GetComponent<InventorySlot>().physicalItem != null){
                 Instantiate(selectedSlot.GetComponent<InventorySlot>().physicalItem, dropPoint.position, dropPoint.rotation);
                 selectedSlot.GetComponent<InventorySlot>().inventoryItem = null;
                 InventoryScript.inventoryFull = false;
             }
-        }
+        }  
     }
 }

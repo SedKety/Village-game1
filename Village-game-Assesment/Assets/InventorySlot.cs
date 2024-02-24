@@ -41,14 +41,15 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public void OnPointerEnter(PointerEventData eventData)
     {
         slotSelectedOrNot.SetActive(true);
+        itempickup.selectedSlot = gameObject;
     }
     public void OnPointerExit(PointerEventData eventData)
     {
         slotSelectedOrNot.SetActive(false);
+        itempickup.selectedSlot = null;
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        itempickup.selectedSlot = gameObject;
         showDescription.SetActive(true);
     }
 }
