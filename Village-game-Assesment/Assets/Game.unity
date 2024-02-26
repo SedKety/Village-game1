@@ -768,6 +768,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 778286088}
+    - targetCorrespondingSourceObject: {fileID: 7689586637743565165, guid: a4321671f25f56e4ea0d7081bf668aee,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 778286094}
   m_SourcePrefab: {fileID: 100100000, guid: a4321671f25f56e4ea0d7081bf668aee, type: 3}
 --- !u!1 &727253721 stripped
 GameObject:
@@ -826,6 +830,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &778286094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778286081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f27fa19281fbd841987457b3d817b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireBallSpeed: 10
+  fireBall: {fileID: 7062057887187214215, guid: 746f03d3d5971b247ac5faec0763d5fe,
+    type: 3}
+  fireBallShotPoint: {fileID: 826023656}
 --- !u!1 &798170740
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,6 +940,12 @@ MonoBehaviour:
   inventoryFull: 0
   player: {fileID: 0}
   inventoryOpenOrNot: 0
+--- !u!4 &826023656 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5889620223109150464, guid: a4321671f25f56e4ea0d7081bf668aee,
+    type: 3}
+  m_PrefabInstance: {fileID: 647815896}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &833122094
 PrefabInstance:
   m_ObjectHideFlags: 0
