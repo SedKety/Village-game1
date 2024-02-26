@@ -305,9 +305,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f27fa19281fbd841987457b3d817b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireBallSpeed: 10
   fireBall: {fileID: 7062057887187214215, guid: 746f03d3d5971b247ac5faec0763d5fe,
     type: 3}
-  schietPlek: {fileID: 1494972519028703180}
+  fireBallShotPoint: {fileID: 1494972519028703180}
 --- !u!1 &6000812249433594425
 GameObject:
   m_ObjectHideFlags: 0
