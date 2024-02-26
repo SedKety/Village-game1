@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 6465857301224783555}
   - component: {fileID: 8986991410883049750}
   - component: {fileID: 4659435335186054610}
-  - component: {fileID: 509812683460483859}
+  - component: {fileID: 6761808738022838190}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -293,7 +293,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &509812683460483859
+--- !u!114 &6761808738022838190
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -302,11 +302,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5714031878365999956}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4adc499d7311f2948880b5fcf13187d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f27fa19281fbd841987457b3d817b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bal: {fileID: 7062057887187214215, guid: 746f03d3d5971b247ac5faec0763d5fe, type: 3}
-  plek: {fileID: 1494972519028703180}
+  fireBall: {fileID: 7062057887187214215, guid: 746f03d3d5971b247ac5faec0763d5fe,
+    type: 3}
+  schietPlek: {fileID: 1494972519028703180}
 --- !u!1 &6000812249433594425
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,7 +318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1494972519028703180}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: shot point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject fireBall;
+    public Transform schietPlek;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Instantiate(fireBall, schietPlek.position, schietPlek.rotation);
+        }
     }
 }
