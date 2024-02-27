@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour
     void FixedUpdate()
     {
         //sorry hessel moest dit er in gooien om de inventory te laten werken
-        if (!GameObject.FindAnyObjectByType<InventoryScript>().inventoryOpenOrNot)
+        if (!GameObject.FindAnyObjectByType<ItemPickupAndItemDrop>().inventoryOpenOrNot)
         {
             //camera movement
             transform.Rotate(Input.GetAxisRaw("Mouse X") * mouseSensitivity * Vector3.up);
