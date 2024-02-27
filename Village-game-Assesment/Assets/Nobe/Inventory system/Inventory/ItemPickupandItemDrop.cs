@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -35,9 +36,9 @@ public class ItemPickupAndItemDrop : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if(Physics.Raycast(ray, out hit, 1))
+            if (Physics.Raycast(ray, out hit, 1))
             {
-                if (hit.collider.CompareTag("Material"))
+                if (hit.collider.CompareTag("Material") && inventoryFull == false)
                 {
                     recentlyAddedItem = hit.collider.GetComponent<PhysicalItemScript>().item;
                     NewItemAdded();
@@ -47,37 +48,26 @@ public class ItemPickupAndItemDrop : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (selectedSlot && selectedSlot.GetComponent<InventorySlot>().physicalItem != null){
+            if (selectedSlot && selectedSlot.GetComponent<InventorySlot>().physicalItem != null)
+            {
                 Instantiate(selectedSlot.GetComponent<InventorySlot>().physicalItem, dropPoint.position, dropPoint.rotation);
                 selectedSlot.GetComponent<InventorySlot>().inventoryItem = null;
                 inventoryFull = false;
             }
         }
     }
-    
+
 
     public void NewItemAdded()
     {
-        if (inventoryFull == false && recentlyAddedItem != null)
+
+        for (int i = 0; i < inventorySlots.Length; i++)
         {
-            for (int i = 0; i < inventorySlots.Length; i++)
+            if (inventorySlots[i].GetComponent<InventorySlot>().itemInSlot == false)
             {
-                if (inventorySlots[i].GetComponent<InventorySlot>().itemInSlot == false)
-                {
-                    inventorySlots[i].GetComponent<InventorySlot>().inventoryItem = recentlyAddedItem;
-                    recentlyAddedItem = null;
-                    break;
-                }
-                if (i == inventorySlots.Length - 2)
-                {
-                    inventoryFull = true;
-                }
+                inventorySlots[i].GetComponent<InventorySlot>().inventoryItem = recentlyAddedItem;
+                recentlyAddedItem = null;
             }
         }
-        else if (inventoryFull)
-        {
-            Debug.Log("Inventory is al vol");
-        }
     }
-
 }
