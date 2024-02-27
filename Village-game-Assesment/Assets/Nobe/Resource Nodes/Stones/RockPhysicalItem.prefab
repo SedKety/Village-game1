@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3434192917525439721}
   - component: {fileID: 176684264642959224}
   - component: {fileID: 7318754537395217230}
-  - component: {fileID: 8580599233291476611}
   - component: {fileID: 6623094339124949305}
   - component: {fileID: -1870214870890794435}
+  - component: {fileID: 4676249457179034585}
   m_Layer: 0
   m_Name: RockPhysicalItem
   m_TagString: Material
@@ -86,19 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8580599233291476611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3660127581256195500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1299d72bb0d77b459028a0380fce71e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 8dc7930a3db9e244693cbf7c4a26e5c8, type: 2}
 --- !u!64 &6623094339124949305
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -148,3 +135,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4676249457179034585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3660127581256195500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc3258d811a8a624ca254a01a1447be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisItem: {fileID: 11400000, guid: 6d1f1fe4a1cce764fac374bce7324398, type: 2}
