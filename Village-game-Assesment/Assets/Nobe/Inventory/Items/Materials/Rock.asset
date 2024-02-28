@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2cabc87f918d9540a7c48bbc97e5ec8, type: 3}
-  m_Name: Stone
+  m_Script: {fileID: 11500000, guid: 5488479954be35c469cf59aba7a202bd, type: 3}
+  m_Name: Rock
   m_EditorClassIdentifier: 
-  id: 1
+  id: 3
   itemSprite: {fileID: 21300000, guid: f41c5dd51bd63774c996c9c360676117, type: 3}
-  itemName: Stone
+  itemName: Rock
+  itemPrefab: {fileID: 3660127581256195500, guid: 9a280cd8e6bd9eb47a0775412f65c54b,
+    type: 3}

@@ -12,10 +12,20 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] Transform itemContent;
     [SerializeField] GameObject inventoryItem;
 
+    public GameObject inventory;
 
     private void Awake()
     {
         instance = this;
+    }
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            OpenInventory();
+            inventory.SetActive(true);
+            ListItems();
+        }
     }
 
     public void OnItemAdd(Item item)
@@ -36,11 +46,23 @@ public class InventoryManager : MonoBehaviour
         foreach (var Item in items)
         {
             GameObject obj = Instantiate(inventoryItem, itemContent);
-            var itemName = obj.transform.Find("itemName").GetComponent<TextMeshPro>();
-            var itemPicture = obj.transform.Find("itemPicture").GetComponent<RawImage>();
+            TextMeshPro itemName = obj.transform.GetComponentInChildren<TextMeshPro>();
+            RawImage itemPicture = obj.transform.GetComponentInChildren<RawImage>();
+            obj.GetComponent<InventorySlotScript>().item = Item;
 
             itemName.text = Item.itemName;
             itemPicture.texture = Item.itemSprite.texture;
+            
         }
+    }
+
+    public void OpenInventory()
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().canILook = false;    
+    }
+
+    public void CloseInventory()
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().canILook = true;
     }
 }

@@ -17,22 +17,28 @@ public class Movement : MonoBehaviour
     [SerializeField] Transform cameraHolder;
     private float verticalLookRotation;
 
-    //sorry hessel
     public bool canILook;
-    public bool inventoryOpen;
     private void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody>();
+        canILook = true;
     }
     void Update()
     {
-        //camera movement
-
+        if (canILook)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
             transform.Rotate(Input.GetAxisRaw("Mouse X") * mouseSensitivity * Vector3.up);
             verticalLookRotation -= Input.GetAxisRaw("Mouse Y") * mouseSensitivity;
             verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90f, 90f);
             cameraHolder.localEulerAngles = new Vector3(verticalLookRotation, 0, 0);
+        }
+        else if(!canILook)
+        {
+            Cursor.lockState= CursorLockMode.None;
+        }
+
 
         //player movement
         hor = Input.GetAxis("Horizontal");

@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Items/Consumable")]
-public class Consumable : Item
+[CreateAssetMenu(menuName = "Items/Material")]
+public class Item : ScriptableObject
 {
-    public int foodToReplenish;
-    public int healthToHeal;
+    public int id;
+    public Sprite itemSprite;
+    public string itemName;
+    public GameObject itemPrefab;
 }

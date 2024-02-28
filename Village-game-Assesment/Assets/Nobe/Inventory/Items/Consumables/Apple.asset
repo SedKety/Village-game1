@@ -15,5 +15,6 @@ MonoBehaviour:
   id: 3
   itemSprite: {fileID: 0}
   itemName: Apple
+  itemPrefab: {fileID: 0}
   foodToReplenish: 15
   healthToHeal: 5

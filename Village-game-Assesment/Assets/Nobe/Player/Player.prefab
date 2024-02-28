@@ -24,12 +24,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624027197407359864}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 0, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2868613312019071830}
+  m_Father: {fileID: 1439817037113886365}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7499675155075001748
 GameObject:
@@ -62,7 +62,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5889620223109150464}
   m_Father: {fileID: 2868613312019071830}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &4031197899743958918
@@ -180,7 +181,6 @@ GameObject:
   - component: {fileID: 649515696133397401}
   - component: {fileID: 5000376043725655117}
   - component: {fileID: 5794563508400962504}
-  - component: {fileID: 4041048135239670517}
   - component: {fileID: 6789186919950649852}
   m_Layer: 0
   m_Name: Player
@@ -203,7 +203,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1439817037113886365}
-  - {fileID: 5889620223109150464}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &649515696133397401
@@ -279,21 +278,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4041048135239670517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7689586637743565165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cf3ace91227fcd44aa1bcc98128a60d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InventoryScript: {fileID: 0}
-  selectedSlot: {fileID: 0}
-  dropPoint: {fileID: 5889620223109150464}
 --- !u!114 &6789186919950649852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,3 +295,5 @@ MonoBehaviour:
   jumpVelocity: 0
   mouseSensitivity: 0
   cameraHolder: {fileID: 0}
+  canILook: 0
+  inventoryOpen: 0

@@ -11,7 +11,7 @@ public class InventorySlotScript : MonoBehaviour
     public void RemoveItem()
     {
         InventoryManager.instance.OnItemRemove(item);
-
+        Instantiate(item.itemPrefab, GameObject.FindGameObjectWithTag("Player").GetComponent<Shoot>().fireBallShotPoint.position, Quaternion.identity);  
         Destroy(gameObject);
     }
 
