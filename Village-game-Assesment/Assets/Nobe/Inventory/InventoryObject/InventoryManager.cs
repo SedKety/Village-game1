@@ -14,6 +14,9 @@ public class InventoryManager : MonoBehaviour
 
     public GameObject inventory;
 
+
+
+
     private void Awake()
     {
         instance = this;
@@ -46,13 +49,12 @@ public class InventoryManager : MonoBehaviour
         foreach (var Item in items)
         {
             GameObject obj = Instantiate(inventoryItem, itemContent);
-            TextMeshPro itemName = obj.transform.GetComponentInChildren<TextMeshPro>();
+            TextMeshProUGUI itemName = obj.transform.GetComponentInChildren<TextMeshProUGUI>();
             RawImage itemPicture = obj.transform.GetComponentInChildren<RawImage>();
             obj.GetComponent<InventorySlotScript>().item = Item;
 
             itemName.text = Item.itemName;
-            itemPicture.texture = Item.itemSprite.texture;
-            
+            itemPicture.texture = Item.itemSprite.texture; 
         }
     }
 

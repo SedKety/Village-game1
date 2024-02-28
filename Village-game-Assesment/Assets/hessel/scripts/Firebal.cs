@@ -5,6 +5,11 @@ using UnityEngine;
 public class Firebal : MonoBehaviour
 {
     public int dmg;
+
+    public void Start()
+    {
+        Destroy(gameObject, 5);
+    }
     private void OnCollisionExit(Collision collision)
     {
         if ((collision.collider.CompareTag("ResourceNode")))
@@ -12,6 +17,5 @@ public class Firebal : MonoBehaviour
             collision.gameObject.GetComponent<ResourceNodeScript>().OnDmg(dmg);
             Destroy(gameObject);
         }
-        Destroy(gameObject, 5);
     }
 }
