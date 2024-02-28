@@ -9,6 +9,7 @@ public class ItemPickup : MonoBehaviour
     public void OnPickUp()
     {
         InventoryManager.instance.OnItemAdd(thisItem);
+        GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>().ListItems();
         Destroy(gameObject);
     }
 
