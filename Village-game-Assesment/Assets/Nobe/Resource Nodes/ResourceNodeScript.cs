@@ -8,15 +8,8 @@ public class ResourceNodeScript : MonoBehaviour
 {
     public int nodeHealth;
     [SerializeField]  GameObject itemToDrop;
-    public nodeType typeOfResourceNode;
 
     [SerializeField] Transform itemspawnpoint;
-    public enum nodeType
-    {
-        rock,
-        tree,
-        food,
-    }
 
     public void OnDmg(int dmgTaken)
     {

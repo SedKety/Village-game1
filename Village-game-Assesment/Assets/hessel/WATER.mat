@@ -20,7 +20,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties: _RippleColor
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -43,10 +43,10 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RippleDensity: 4
-    - _RippleSlimness: 8
-    - _RippleSpeed: 3
+    - _RippleSlimness: 1
+    - _RippleSpeed: 0
     - _WaveScale: 2
-    - _WaveSpeed: 0.3
+    - _WaveSpeed: 0.05
     m_Colors:
     - _BaseColor: {r: 0.13937336, g: 0.5873612, b: 0.8490566, a: 0}
     - _RippleColor: {r: 0.1618483, g: 1.496878, b: 1.825099, a: 0}
