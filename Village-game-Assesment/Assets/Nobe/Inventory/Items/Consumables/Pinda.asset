@@ -18,5 +18,6 @@ MonoBehaviour:
   itemDescription: Hm i wonder what happens if i eat a whole lot of these
   itemPrefab: {fileID: 6624099222994009695, guid: 727104c4061255048a823c633056252f,
     type: 3}
+  type: 1
   foodToReplenish: 1
   healthToHeal: 1

@@ -17,5 +17,6 @@ MonoBehaviour:
   itemName: Apple
   itemDescription: An apple a day keeps the doctor away
   itemPrefab: {fileID: 0}
+  type: 1
   foodToReplenish: 15
   healthToHeal: 5
