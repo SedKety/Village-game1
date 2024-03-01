@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    public int health;
-    public int mana;
+    public float health;
+    public float mana;
+    public float food;
+
+    public bool hungerEnabled;
     // Start is called before the first frame update
     void Start()
     {
         health = 100;
         mana = 100;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        food = 100;
+        StartCoroutine(Hunger());
+        StartCoroutine(HealthRecovery());
+        StartCoroutine(ManaRecovery());
     }
 
     public void DoDamage(int damage)
@@ -25,6 +26,49 @@ public class PlayerManager : MonoBehaviour
         if (health < 0)
         {
 
+        }
+    }
+
+    public IEnumerator Hunger()
+    {
+        while (hungerEnabled)
+        {
+            int canDecreaseFood = Random.Range(0, 5);
+            if (canDecreaseFood == 0)
+            {
+                food -= 1;
+                yield return new WaitForSeconds(5f);
+            }
+        }
+    }
+
+    public IEnumerator ManaRecovery()
+    {
+        if (mana <= 99)
+        {
+            mana += 0.5f;
+            yield return new WaitForSeconds(1f);
+            StartCoroutine(ManaRecovery());
+        }
+        else if (mana == 100)
+        {
+            yield return new WaitForSeconds(1f);
+            StartCoroutine(ManaRecovery());
+        }
+    }
+
+    public IEnumerator HealthRecovery()
+    {
+        if (health <= 99)
+        {
+            health += 0.1f;
+            yield return new WaitForSeconds(1f);
+            StartCoroutine(HealthRecovery());
+        }
+        else if (health == 100)
+        {
+            yield return new WaitForSeconds(1f);
+            StartCoroutine(HealthRecovery());
         }
     }
 }

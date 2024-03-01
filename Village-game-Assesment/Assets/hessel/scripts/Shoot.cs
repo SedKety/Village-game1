@@ -8,11 +8,15 @@ public class Shoot : MonoBehaviour
     public GameObject fireBall;
     public Transform fireBallShotPoint;
 
+    public PlayerManager playerManager;
     void Fire()
     {
-        Rigidbody bulletClone = Instantiate(fireBall, fireBallShotPoint.position, fireBallShotPoint.rotation).GetComponent<Rigidbody>();
-        bulletClone.velocity = fireBallShotPoint.forward * fireBallSpeed;
-
+        if (playerManager.mana >= 10)
+        {
+            playerManager.mana -= 10;
+            Rigidbody bulletClone = Instantiate(fireBall, fireBallShotPoint.position, fireBallShotPoint.rotation).GetComponent<Rigidbody>();
+            bulletClone.velocity = fireBallShotPoint.forward * fireBallSpeed;
+        }
     }
     void Update()
     {

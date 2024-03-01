@@ -2188,6 +2188,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 778286094}
+    - targetCorrespondingSourceObject: {fileID: 7689586637743565165, guid: a4321671f25f56e4ea0d7081bf668aee,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 778286095}
   m_SourcePrefab: {fileID: 100100000, guid: a4321671f25f56e4ea0d7081bf668aee, type: 3}
 --- !u!1 &778286081 stripped
 GameObject:
@@ -2238,6 +2242,23 @@ MonoBehaviour:
   fireBall: {fileID: 7062057887187214215, guid: 746f03d3d5971b247ac5faec0763d5fe,
     type: 3}
   fireBallShotPoint: {fileID: 826023656}
+  playerManager: {fileID: 778286095}
+--- !u!114 &778286095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778286081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5032248eba42dc04c9349f9a58bee50e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  mana: 100
+  food: 100
+  hungerEnabled: 1
 --- !u!4 &826023656 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5889620223109150464, guid: a4321671f25f56e4ea0d7081bf668aee,

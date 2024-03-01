@@ -34,9 +34,9 @@ public class Movement : MonoBehaviour
             verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90f, 90f);
             cameraHolder.localEulerAngles = new Vector3(verticalLookRotation, 0, 0);
         }
-        else if(!canILook)
+        else if (!canILook)
         {
-            Cursor.lockState= CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.None;
         }
 
 
