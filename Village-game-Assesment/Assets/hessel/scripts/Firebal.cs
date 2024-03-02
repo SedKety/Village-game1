@@ -10,11 +10,15 @@ public class Firebal : MonoBehaviour
     {
         Destroy(gameObject, 5);
     }
-    private void OnCollisionExit(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if ((collision.collider.CompareTag("ResourceNode")))
         {
             collision.gameObject.GetComponent<ResourceNodeScript>().OnDmg(dmg);
+            Destroy(gameObject);
+        }
+        else if(collision.gameObject.tag != "Player")
+        {
             Destroy(gameObject);
         }
     }

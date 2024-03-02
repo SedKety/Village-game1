@@ -101,7 +101,6 @@ MonoBehaviour:
   nodeHealth: 25
   itemToDrop: {fileID: 3660127581256195500, guid: 9a280cd8e6bd9eb47a0775412f65c54b,
     type: 3}
-  typeOfResourceNode: 0
   itemspawnpoint: {fileID: 5989345341835833570}
 --- !u!64 &9203478807041135848
 MeshCollider:
@@ -150,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 4133464878187799913}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.157, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

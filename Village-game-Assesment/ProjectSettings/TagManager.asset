@@ -9,6 +9,8 @@ TagManager:
   - Material
   - ResourceNode
   - InventoryManager
+  - NoSpawnZone
+  - ResourceNodeManager
   layers:
   - Default
   - TransparentFX
