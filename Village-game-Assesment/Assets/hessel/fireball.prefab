@@ -285,6 +285,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 5
+  explosionParticles: {fileID: 3867533903961630234, guid: c935b8d3398dc674688659c3c7e85cba,
+    type: 3}
 --- !u!1 &8902717645743027898
 GameObject:
   m_ObjectHideFlags: 0

@@ -284,7 +284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6012318445066657856}
   - component: {fileID: 7888370401130036894}
-  - component: {fileID: 1301231261766444000}
+  - component: {fileID: 7040907926350575762}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -333,9 +333,9 @@ MonoBehaviour:
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
   m_Spacing: {x: 0, y: 0}
-  m_Constraint: 0
-  m_ConstraintCount: 2
---- !u!114 &1301231261766444000
+  m_Constraint: 1
+  m_ConstraintCount: 5
+--- !u!114 &7040907926350575762
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalFit: 1
-  m_VerticalFit: 1
+  m_VerticalFit: 0
 --- !u!1 &2352103997719201619
 GameObject:
   m_ObjectHideFlags: 0
