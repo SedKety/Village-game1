@@ -5,8 +5,13 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public float health;
+    public float maxHealth;
+
     public float mana;
+    public float maxMana;
+
     public float food;
+    public float maxFood;
 
     public bool hungerEnabled;
     // Start is called before the first frame update
@@ -19,13 +24,28 @@ public class PlayerManager : MonoBehaviour
         StartCoroutine(HealthRecovery());
         StartCoroutine(ManaRecovery());
     }
+    private void Update()
+    {
+        if(health >= maxHealth)
+        {
+            health = maxHealth;
+        }
+        if(mana >= maxMana)
+        {
+            mana = maxMana;
+        }
+        if(maxFood >= maxFood)
+        {
+            food = maxFood;
+        }
+    }
 
     public void DoDamage(int damage)
     {
         health -= damage;
         if (health < 0)
         {
-
+            print("You Died");
         }
     }
 

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
-    public static InventoryManager instance;
+    public static InventoryManager inventoryManager;
     public List<Item> items = new List<Item>();
 
     [SerializeField] Transform itemContent;
@@ -14,12 +14,9 @@ public class InventoryManager : MonoBehaviour
 
     public GameObject inventory;
 
-
-
-
     private void Awake()
     {
-        instance = this;
+        inventoryManager = this;
     }
     public void Update()
     {
