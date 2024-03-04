@@ -34,7 +34,7 @@ public class PlayerManager : MonoBehaviour
         {
             mana = maxMana;
         }
-        if(maxFood >= maxFood)
+        if(food >= maxFood)
         {
             food = maxFood;
         }
@@ -53,7 +53,7 @@ public class PlayerManager : MonoBehaviour
     {
         while (hungerEnabled)
         {
-            int canDecreaseFood = Random.Range(0, 5);
+            int canDecreaseFood = Random.Range(0, 2);
             if (canDecreaseFood == 0)
             {
                 food -= 1;

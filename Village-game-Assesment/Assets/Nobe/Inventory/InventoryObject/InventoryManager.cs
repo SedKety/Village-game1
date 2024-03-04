@@ -14,13 +14,15 @@ public class InventoryManager : MonoBehaviour
 
     public GameObject inventory;
 
+
+    public GameObject playerSliders;
     private void Awake()
     {
         inventoryManager = this;
     }
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             OpenInventory();
             inventory.SetActive(true);
@@ -51,17 +53,20 @@ public class InventoryManager : MonoBehaviour
             obj.GetComponent<InventorySlotScript>().item = Item;
 
             itemName.text = Item.itemName;
-            itemPicture.texture = Item.itemSprite.texture; 
+            itemPicture.texture = Item.itemSprite.texture;
         }
     }
 
     public void OpenInventory()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().canILook = false;    
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().canILook = false;
+        playerSliders.SetActive(false);
+
     }
 
     public void CloseInventory()
     {
         GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().canILook = true;
+        playerSliders.SetActive(true);
     }
 }
