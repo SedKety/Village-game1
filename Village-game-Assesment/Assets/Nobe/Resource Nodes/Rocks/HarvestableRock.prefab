@@ -102,6 +102,8 @@ MonoBehaviour:
   itemToDrop: {fileID: 3660127581256195500, guid: 9a280cd8e6bd9eb47a0775412f65c54b,
     type: 3}
   itemspawnpoint: {fileID: 5989345341835833570}
+  enemyObject: {fileID: 199430617569976383, guid: ebbe4a0ca4cd0854394cf8b921f9fefb,
+    type: 3}
 --- !u!64 &9203478807041135848
 MeshCollider:
   m_ObjectHideFlags: 0
