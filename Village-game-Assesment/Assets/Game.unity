@@ -1359,6 +1359,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2681856430623123896, guid: ca379e1b9b9ecbc41b9376ce3cc239f6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3160620676538106367, guid: ca379e1b9b9ecbc41b9376ce3cc239f6,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1883,6 +1888,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6501930993446811907, guid: ca379e1b9b9ecbc41b9376ce3cc239f6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6696985326956948959, guid: ca379e1b9b9ecbc41b9376ce3cc239f6,
         type: 3}
@@ -3471,6 +3481,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 778286095}
+    - targetCorrespondingSourceObject: {fileID: 7689586637743565165, guid: a4321671f25f56e4ea0d7081bf668aee,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 778286096}
   m_SourcePrefab: {fileID: 100100000, guid: a4321671f25f56e4ea0d7081bf668aee, type: 3}
 --- !u!1001 &725212418
 PrefabInstance:
@@ -3615,6 +3629,26 @@ MonoBehaviour:
   food: 100
   maxFood: 100
   hungerEnabled: 1
+--- !u!114 &778286096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778286081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e04b70a8b70c0764a9f655529b1ce494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nuke: {fileID: 5725062764036339875, guid: f31530e4366026740b750496715022d6, type: 3}
+  hitMarker: {fileID: 1073138579009271628, guid: 162b88d3ebce8c344a9fb95cc0b00643,
+    type: 3}
+  currentHitMarker: {fileID: 0}
+  airstrikeMode: 0
+  checkForGround:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &783413880
 GameObject:
   m_ObjectHideFlags: 0
