@@ -11,14 +11,16 @@ TagManager:
   - InventoryManager
   - NoSpawnZone
   - ResourceNodeManager
+  - EnemyChecker
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Map
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 

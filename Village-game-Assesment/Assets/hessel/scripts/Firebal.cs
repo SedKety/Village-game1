@@ -12,16 +12,24 @@ public class Firebal : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if ((collision.collider.CompareTag("ResourceNode")))
+        if (collision.collider.CompareTag("ResourceNode"))
         {
             collision.gameObject.GetComponent<ResourceNodeScript>().OnDmg(dmg);
             GameObject particles = Instantiate(explosionParticles, transform.position, Quaternion.identity);
             Destroy(particles, 1);
             Destroy(gameObject);
         }
-        else if(collision.gameObject.tag != "Player")
+
+        else if (collision.collider.CompareTag("Enemy"))
         {
-           GameObject particles = Instantiate(explosionParticles, transform.position, Quaternion.identity);
+            collision.gameObject.GetComponent<EnemyScript>().OnDmg(dmg);
+            GameObject particles = Instantiate(explosionParticles, transform.position, Quaternion.identity);
+            Destroy(particles, 1);
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.tag != "Player")
+        {
+            GameObject particles = Instantiate(explosionParticles, transform.position, Quaternion.identity);
             Destroy(particles, 1);
             Destroy(gameObject);
         }
