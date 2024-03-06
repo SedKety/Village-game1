@@ -5,35 +5,49 @@ using UnityEngine;
 
 public class SaveData : MonoBehaviour
 {
-    private PlayerData playerData;
+    public PlayerData playerData;
     public GameObject player;
+    private string path;
     void Start()
     {
+        path = Application.dataPath + Path.AltDirectorySeparatorChar + "SaveData.json";
         player = GameObject.FindGameObjectWithTag("Player");
-        playerData = player.GetComponent<PlayerData>();
+        playerData = Load();
     }
 
     public void Save()
     {
+        playerData.x = player.transform.position.x;
+        playerData.y = player.transform.position.y;
+        playerData.z = player.transform.position.z;
+        playerData.food = player.GetComponent<PlayerManager>().food;
+        playerData.mana = player.GetComponent<PlayerManager>().mana;
+        playerData.health = player.GetComponent<PlayerManager>().health;
         string json = JsonUtility.ToJson(playerData);
         Debug.Log(json);
 
-        using(StreamWriter sw = new StreamWriter(Application.dataPath + Path.AltDirectorySeparatorChar + "SaveData.json"))
+        using (StreamWriter sw = new StreamWriter(path))
         {
             sw.Write(json);
         }
     }
-    public void Load()
+    PlayerData Load()
     {
         string json = string.Empty;
+        PlayerData data;
 
-        using (StreamReader reader = new StreamReader(Application.dataPath + Path.AltDirectorySeparatorChar + "SaveData.json"))
+        if (File.Exists(path))
         {
-            json = reader.ReadToEnd();
+            using (StreamReader reader = new StreamReader(path))
+            {
+                json = reader.ReadToEnd();
+            }
+            data = JsonUtility.FromJson<PlayerData>(json);
         }
-
-        PlayerData data = JsonUtility.FromJson<PlayerData>(json);
-        playerData.GetComponent<PlayerData>().intsToSave = data.intsToSave;
-        playerData.GetComponent<PlayerData>().floatsToSave = data.floatsToSave;
+        else
+        {
+            data = new PlayerData();
+        }
+        return data;
     }
 }
