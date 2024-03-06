@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerData : MonoBehaviour
+[Serializable]
+public class PlayerData
 {
-    public int[] intsToSave;
-    public float[] floatsToSave;
+    public float x, y, z;
+    public float health, mana, food;
 }
