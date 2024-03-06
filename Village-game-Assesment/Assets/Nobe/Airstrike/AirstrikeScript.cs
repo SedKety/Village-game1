@@ -13,6 +13,8 @@ public class AirstrikeScript : MonoBehaviour
     public bool airstrikeMode;
 
     public LayerMask checkForGround;
+
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
@@ -26,9 +28,21 @@ public class AirstrikeScript : MonoBehaviour
                 airstrikeMode = false;
             }
         }
-        if (Input.GetMouseButtonDown(0))
+        if (airstrikeMode == true)
         {
-            IniatiateBigBoomBoom();
+            if (Input.GetMouseButtonDown(0))
+            {
+                foreach (Item item in InventoryManager.inventoryManager.items)
+                {
+                    if (item.id == 2)
+                    {
+                        IniatiateBigBoomBoom();
+                        InventoryManager.inventoryManager.OnItemRemove(item);
+                        InventoryManager.inventoryManager.ListItems();
+                        break;
+                    }
+                }
+            }
         }
         if (airstrikeMode == true)
         {
@@ -44,11 +58,12 @@ public class AirstrikeScript : MonoBehaviour
                 {
                     currentHitMarker.SetActive(true);
                     currentHitMarker.transform.position = hit.point;
+                    currentHitMarker.transform.up = hit.normal;
                 }
             }
             else
             {
-                if(currentHitMarker != null)
+                if (currentHitMarker != null)
                 {
                     currentHitMarker.SetActive(false);
                 }

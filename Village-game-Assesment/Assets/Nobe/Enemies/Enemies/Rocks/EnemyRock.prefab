@@ -152,6 +152,9 @@ MonoBehaviour:
   itemToDrop: {fileID: 3660127581256195500, guid: 9a280cd8e6bd9eb47a0775412f65c54b,
     type: 3}
   itemspawnpoint: {fileID: 8053399651455854142}
+  layerToWalkOn:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!54 &1007007099355277695
 Rigidbody:
   m_ObjectHideFlags: 0

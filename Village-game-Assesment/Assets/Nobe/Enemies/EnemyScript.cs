@@ -13,9 +13,20 @@ public class EnemyScript : MonoBehaviour
     public GameObject itemToDrop;
     public Transform itemspawnpoint;
 
+    public LayerMask layerToWalkOn;
     public void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+    }
+    public void Update()
+    {
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position, Vector3.down, out hit, 10, layerToWalkOn))
+        {
+            print(3456789);
+           transform.rotation.SetLookRotation(transform.forward,  hit.normal);
+            //transform.LookAt(hit.transform);
+        }
     }
 
     public void OnTriggerStay(Collider other)

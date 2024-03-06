@@ -25,7 +25,7 @@ public class ResourceNodeScript : MonoBehaviour
             Instantiate(itemToDrop, itemspawnpoint.position, Quaternion.identity);
             Destroy(gameObject);
            int  spawnEnemyOrNot = Random.Range(0, 2);
-            if(spawnEnemyOrNot == 0) 
+            if(spawnEnemyOrNot == 0 && enemyObject) 
             {
                 Instantiate(enemyObject, itemspawnpoint.position, Quaternion.identity);
             }

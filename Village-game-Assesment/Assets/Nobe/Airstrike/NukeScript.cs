@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NukeScript : MonoBehaviour
 {
     public GameObject particles;
+    public bool canDmg;
+    public int nukeDmg = 999;
+
+    public List<GameObject> dmgList;
 
     public void OnCollisionEnter(Collision collision)
     {
@@ -13,11 +18,43 @@ public class NukeScript : MonoBehaviour
         StartCoroutine(BoomBoom());
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            dmgList.Add(other.gameObject);
+        }
+        else if (other.CompareTag("ResourceNode"))
+        {
+            dmgList.Add(other.gameObject);
+        }
+    }
+
     public IEnumerator BoomBoom()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1);
+        DestroyNodes();
+        canDmg = true;
         GameObject newParticles = Instantiate(particles, transform.position, Quaternion.identity);
         Destroy(newParticles, 4);
         Destroy(gameObject);
+    }
+
+    public void DestroyNodes()
+    {
+        foreach (var gameobject in dmgList)
+        {
+            if(gameobject != null)
+            {
+                if (gameobject.CompareTag("ResourceNode"))
+                {
+                    gameobject.GetComponent<ResourceNodeScript>().OnDmg(nukeDmg);
+                }
+                else if (gameobject.CompareTag("Enemy"))
+                {
+                    gameobject.GetComponent<EnemyScript>().OnDmg(nukeDmg);
+                }
+            }
+        }
     }
 }
