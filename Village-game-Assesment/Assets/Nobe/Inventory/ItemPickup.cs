@@ -6,6 +6,10 @@ public class ItemPickup : MonoBehaviour
 {
     public Item thisItem;
 
+    public void Start()
+    {
+        StartCoroutine(despawnTimer());
+    }
     public void OnPickUp()
     {
         InventoryManager.inventoryManager.OnItemAdd(thisItem);
@@ -14,8 +18,9 @@ public class ItemPickup : MonoBehaviour
     }
 
 
-    private void OnMouseDown()
+    public IEnumerator despawnTimer()
     {
-        OnPickUp();
+        yield return new WaitForSeconds(50);
+        Destroy(gameObject);
     }
 }

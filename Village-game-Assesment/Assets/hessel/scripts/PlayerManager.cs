@@ -38,6 +38,20 @@ public class PlayerManager : MonoBehaviour
         {
             food = maxFood;
         }
+
+
+        if(Input.GetMouseButton(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if(Physics.Raycast(ray, out hit, 5))
+            {
+                if (hit.collider.CompareTag("Material"))
+                {
+                    hit.collider.GetComponent<ItemPickup>().OnPickUp();
+                }
+            }
+        }
     }
 
     public void DoDamage(int damage)

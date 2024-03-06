@@ -9,11 +9,13 @@ public class Shoot : MonoBehaviour
     public Transform fireBallShotPoint;
 
     public PlayerManager playerManager;
+
+    public int manaCost;
     void Fire()
     {
-        if (playerManager.mana >= 10)
+        if (playerManager.mana >= manaCost)
         {
-            playerManager.mana -= 10;
+            playerManager.mana -= manaCost;
             Rigidbody bulletClone = Instantiate(fireBall, fireBallShotPoint.position, fireBallShotPoint.rotation).GetComponent<Rigidbody>();
             bulletClone.velocity = fireBallShotPoint.forward * fireBallSpeed;
         }

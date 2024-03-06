@@ -44,7 +44,7 @@ public class NukeScript : MonoBehaviour
     {
         foreach (var gameobject in dmgList)
         {
-            if(gameobject != null)
+            if (gameobject != null)
             {
                 if (gameobject.CompareTag("ResourceNode"))
                 {

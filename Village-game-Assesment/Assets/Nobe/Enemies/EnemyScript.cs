@@ -21,11 +21,10 @@ public class EnemyScript : MonoBehaviour
     public void Update()
     {
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, Vector3.down, out hit, 10, layerToWalkOn))
+        if (Physics.Raycast(transform.position, -transform.up, out hit))
         {
-            print(3456789);
-           transform.rotation.SetLookRotation(transform.forward,  hit.normal);
-            //transform.LookAt(hit.transform);
+            transform.up = hit.normal;
+            transform.LookAt(FindObjectOfType<PlayerManager>().gameObject.transform);
         }
     }
 
