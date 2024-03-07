@@ -761,6 +761,21 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6286610941529321651, guid: 1b6fc25c809b57744b708844ce4199d5,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6286610941529321651, guid: 1b6fc25c809b57744b708844ce4199d5,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 6286610941529321651, guid: 1b6fc25c809b57744b708844ce4199d5,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 8937162146335346836, guid: 1b6fc25c809b57744b708844ce4199d5,
         type: 3}
       propertyPath: m_Type
