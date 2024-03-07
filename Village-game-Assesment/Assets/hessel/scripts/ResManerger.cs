@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.IO;
+using UnityEngine.UI;
+
 public class ResolutionScript : MonoBehaviour
 {
     [SerializeField] private TMP_Dropdown resolutionDropdown;
-
+    public GameObject backButton;
     private Resolution[] resolutions;
     private List<Resolution> resolutionList;
-
     private float currentRefRate;
     private int currentResolutionIndex = 0;
 
@@ -43,13 +45,30 @@ public class ResolutionScript : MonoBehaviour
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
 
+        Invoke("AnotherDelay", 0.001f);
     }
-
+    //unity will niet stoppen met erroren omdat hij probeert de save te veranderen voordat hij gemaakt wordt vgm en dit is een manier om te fixen
+    //wel heel kut maar tja
+    void AnotherDelay()
+    {
+        SetResolution(backButton.GetComponent<SaveSettings>().settingsData.resolutionIndex);
+    }
+    void Delay(int resolutionIndex)
+    {
+        backButton.GetComponent<SaveSettings>().settingsData.resolutionIndex = resolutionIndex;
+    }
 
     public void SetResolution(int resolutionIndex)
     {
+        StartCoroutine(enumerator(resolutionIndex));
         Resolution resolution = resolutionList[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, true);
-
     }
+
+    IEnumerator enumerator(int resolutionIndex)
+    {
+        yield return new WaitForSeconds(0.001f);
+        Delay(resolutionIndex);
+    }
+
 }
