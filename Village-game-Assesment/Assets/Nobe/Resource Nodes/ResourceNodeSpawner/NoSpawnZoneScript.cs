@@ -8,13 +8,13 @@ public class NoSpawnZoneScript : MonoBehaviour
 
     public void Start()
     {
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject, 3);
     }
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.name == (filteredOutGameObject.name + "Clone"))
+        if (other.gameObject.name == (filteredOutGameObject.name + "Clone"))
         {
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
         }
     }
 }

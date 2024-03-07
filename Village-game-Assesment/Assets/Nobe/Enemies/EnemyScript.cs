@@ -19,6 +19,7 @@ public class EnemyScript : MonoBehaviour
     public void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        shouldLookAtPlayer = false;
     }
     public void Update()
     {

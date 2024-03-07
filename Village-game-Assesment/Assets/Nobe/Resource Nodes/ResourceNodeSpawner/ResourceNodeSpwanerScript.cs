@@ -9,6 +9,7 @@ public class ResourceNodeSpwanerScript : MonoBehaviour
     public int spawnCount;
     public Transform resourceNodeManager;
 
+    public LayerMask spawnLayerMask;
     public void Start()
     {
         resourceNodeManager = GameObject.FindGameObjectWithTag("ResourceNodeManager").transform;
@@ -23,7 +24,7 @@ public class ResourceNodeSpwanerScript : MonoBehaviour
             Vector3 randomSpawnPoint = GetRandomPointInCollider(spawnCollider.bounds);
             RaycastHit hit;
 
-            if (Physics.Raycast(randomSpawnPoint, Vector3.down, out hit) && hit.collider.tag != "ResourceNode")
+            if (Physics.Raycast(randomSpawnPoint, Vector3.down, out hit, 100, spawnLayerMask))
             {
                 randomSpawnPoint.y = hit.point.y;
                 GameObject spawnedNode = Instantiate(resourceNodeToSpawn, randomSpawnPoint, Quaternion.identity, resourceNodeManager);
