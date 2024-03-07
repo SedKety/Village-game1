@@ -155,6 +155,7 @@ MonoBehaviour:
   layerToWalkOn:
     serializedVersion: 2
     m_Bits: 8
+  shouldLookAtPlayer: 1
 --- !u!54 &1007007099355277695
 Rigidbody:
   m_ObjectHideFlags: 0

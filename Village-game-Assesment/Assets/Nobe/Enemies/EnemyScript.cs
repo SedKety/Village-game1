@@ -14,6 +14,8 @@ public class EnemyScript : MonoBehaviour
     public Transform itemspawnpoint;
 
     public LayerMask layerToWalkOn;
+
+    public bool shouldLookAtPlayer;
     public void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -24,7 +26,8 @@ public class EnemyScript : MonoBehaviour
         if (Physics.Raycast(transform.position, -transform.up, out hit))
         {
             transform.up = hit.normal;
-            transform.LookAt(FindObjectOfType<PlayerManager>().gameObject.transform);
+            if (shouldLookAtPlayer) { transform.LookAt(navMeshAgent.destination); }
+
         }
     }
 
@@ -52,5 +55,13 @@ public class EnemyScript : MonoBehaviour
             Instantiate(itemToDrop, itemspawnpoint.position, Quaternion.identity);
             Destroy(gameObject);
         }
+    }
+
+
+
+    public IEnumerator despawnTimer()
+    {
+        yield return new WaitForSeconds(100);
+        Destroy(gameObject);
     }
 }

@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f27fa19281fbd841987457b3d817b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireBallSpeed: 10
+  fireBallSpeed: 25
   fireBall: {fileID: 7062057887187214215, guid: 746f03d3d5971b247ac5faec0763d5fe,
     type: 3}
   fireBallShotPoint: {fileID: 5889620223109150464}
@@ -413,8 +413,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+  hpRecoveryAmount: 0.5
   mana: 100
   maxMana: 100
+  manaRecoveryAmount: 1
   food: 100
   maxFood: 100
   hungerEnabled: 1

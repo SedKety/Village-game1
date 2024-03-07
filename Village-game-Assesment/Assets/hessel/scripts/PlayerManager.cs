@@ -6,9 +6,11 @@ public class PlayerManager : MonoBehaviour
 {
     public float health;
     public float maxHealth;
+    public float hpRecoveryAmount;
 
     public float mana;
     public float maxMana;
+    public float manaRecoveryAmount;
 
     public float food;
     public float maxFood;
@@ -80,7 +82,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (mana <= 99)
         {
-            mana += 0.5f;
+            mana += manaRecoveryAmount;
             yield return new WaitForSeconds(1f);
             StartCoroutine(ManaRecovery());
         }
@@ -95,7 +97,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (health <= 99)
         {
-            health += 0.1f;
+            health += hpRecoveryAmount;
             yield return new WaitForSeconds(1f);
             StartCoroutine(HealthRecovery());
         }

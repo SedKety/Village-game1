@@ -23,7 +23,7 @@ public class ResourceNodeSpwanerScript : MonoBehaviour
             Vector3 randomSpawnPoint = GetRandomPointInCollider(spawnCollider.bounds);
             RaycastHit hit;
 
-            if (Physics.Raycast(randomSpawnPoint, Vector3.down, out hit) && hit.collider.tag != "NoSpawnZone")
+            if (Physics.Raycast(randomSpawnPoint, Vector3.down, out hit) && hit.collider.tag != "ResourceNode")
             {
                 randomSpawnPoint.y = hit.point.y;
                 GameObject spawnedNode = Instantiate(resourceNodeToSpawn, randomSpawnPoint, Quaternion.identity, resourceNodeManager);
