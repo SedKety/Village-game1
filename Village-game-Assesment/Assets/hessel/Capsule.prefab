@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7138524764741882680}
   - component: {fileID: 2104557138434606105}
-  - component: {fileID: 5692823077638746022}
   - component: {fileID: 7304811818670669723}
+  - component: {fileID: 4981034215563254929}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -86,14 +86,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &5692823077638746022
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3725353254165885038}
-  m_Enabled: 1
 --- !u!114 &7304811818670669723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,6 +130,14 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!81 &4981034215563254929
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3725353254165885038}
+  m_Enabled: 1
 --- !u!1 &5714031878365999956
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +310,8 @@ MonoBehaviour:
   fireBall: {fileID: 7062057887187214215, guid: 746f03d3d5971b247ac5faec0763d5fe,
     type: 3}
   fireBallShotPoint: {fileID: 1494972519028703180}
+  playerManager: {fileID: 0}
+  manaCost: 0
 --- !u!1 &6000812249433594425
 GameObject:
   m_ObjectHideFlags: 0

@@ -130,6 +130,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Buttons (1)_1
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 488
+        width: 350
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 16, z: 33, w: 15}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24fc51322b8c3e445a607b487cba96ed
+      internalID: -923387698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -142,6 +163,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Buttons (1)_0: -1929406892
+      Buttons (1)_1: -1940336494
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
