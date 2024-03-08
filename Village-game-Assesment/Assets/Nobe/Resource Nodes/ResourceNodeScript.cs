@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ResourceNodeScript : MonoBehaviour
+public class ResourceNodeScript : MonoBehaviour, IDamagable
 {
     public int nodeHealth;
     [SerializeField]  GameObject itemToDrop;
@@ -31,5 +31,10 @@ public class ResourceNodeScript : MonoBehaviour
             }
 
         }
+    }
+
+    public void Damagable(int dmg)
+    {
+        OnDmg(dmg);
     }
 }

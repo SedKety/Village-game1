@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyScript : MonoBehaviour
+public class EnemyScript : MonoBehaviour, IDamagable
 {
     public int enemyDmg;
     public int enemyHp;
@@ -27,7 +27,10 @@ public class EnemyScript : MonoBehaviour
         if (Physics.Raycast(transform.position, -transform.up, out hit))
         {
             transform.up = hit.normal;
-            if (shouldLookAtPlayer) { transform.LookAt(navMeshAgent.destination); }
+            if (shouldLookAtPlayer & navMeshAgent.destination != null)
+            {
+                transform.LookAt(navMeshAgent.destination);
+            }
 
         }
     }
@@ -37,6 +40,14 @@ public class EnemyScript : MonoBehaviour
         if (other.CompareTag("EnemyChecker"))
         {
             navMeshAgent.destination = (other.transform.position);
+            shouldLookAtPlayer = true;
+        }
+    }
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("EnemyChecker"))
+        {
+            shouldLookAtPlayer = false;
         }
     }
 
@@ -59,10 +70,14 @@ public class EnemyScript : MonoBehaviour
     }
 
 
-
     public IEnumerator despawnTimer()
     {
         yield return new WaitForSeconds(100);
         Destroy(gameObject);
+    }
+
+    public void Damagable(int dmg)
+    {
+        OnDmg(dmg);
     }
 }

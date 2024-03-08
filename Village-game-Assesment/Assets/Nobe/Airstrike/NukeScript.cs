@@ -46,14 +46,8 @@ public class NukeScript : MonoBehaviour
         {
             if (gameobject != null)
             {
-                if (gameobject.CompareTag("ResourceNode"))
-                {
-                    gameobject.GetComponent<ResourceNodeScript>().OnDmg(nukeDmg);
-                }
-                else if (gameobject.CompareTag("Enemy"))
-                {
-                    gameobject.GetComponent<EnemyScript>().OnDmg(nukeDmg);
-                }
+                var gameobjectToDmg = gameobject.GetComponent<IDamagable>();
+                gameobjectToDmg.Damagable(nukeDmg);
             }
         }
     }
