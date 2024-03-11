@@ -16,6 +16,14 @@ public class Firebal : MonoBehaviour
         {
             var objectToDmg = collision.transform.GetComponent<IDamagable>();
             objectToDmg.Damagable(dmg);
+            var explosion = Instantiate(explosionParticles, transform.position, Quaternion.identity);
+            Destroy(explosion, 1);
+            Destroy(gameObject);
+        }
+        else if (collision.transform.GetComponent<IDamagable>() == null)
+        {
+            var explosion = Instantiate(explosionParticles, transform.position, Quaternion.identity);
+            Destroy(explosion, 1);
             Destroy(gameObject);
         }
     }

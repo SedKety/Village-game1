@@ -149,8 +149,9 @@ MonoBehaviour:
   enemyDmg: 10
   enemyHp: 50
   navMeshAgent: {fileID: 0}
-  itemToDrop: {fileID: 3660127581256195500, guid: 9a280cd8e6bd9eb47a0775412f65c54b,
-    type: 3}
+  itemToDrop:
+  - {fileID: 3660127581256195500, guid: 9a280cd8e6bd9eb47a0775412f65c54b, type: 3}
+  - {fileID: 1872954046833510746, guid: 37b42e6c16466fc4696b2ddfc00e1fd6, type: 3}
   itemspawnpoint: {fileID: 8053399651455854142}
   layerToWalkOn:
     serializedVersion: 2

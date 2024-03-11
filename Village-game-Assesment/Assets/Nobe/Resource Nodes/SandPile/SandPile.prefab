@@ -143,7 +143,7 @@ MonoBehaviour:
   itemToDrop: {fileID: 5817418781844086787, guid: e496ed4119c5a9b4097b0eaa4448302a,
     type: 3}
   itemspawnpoint: {fileID: 8529751277929680945}
-  enemyObject: {fileID: 2157245484713335650, guid: 7659964af1272f64a9c86a5bc44a7972,
+  enemyObject: {fileID: 2624815597163382559, guid: 9e1f8b830761a264f807686f00f6c917,
     type: 3}
 --- !u!64 &6787914765301568141
 MeshCollider:

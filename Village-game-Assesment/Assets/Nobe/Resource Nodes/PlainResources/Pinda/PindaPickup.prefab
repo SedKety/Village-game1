@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5412859578180321416}
   - component: {fileID: 3401787971419330847}
   m_Layer: 0
-  m_Name: Pinda
+  m_Name: PindaPickup
   m_TagString: Material
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

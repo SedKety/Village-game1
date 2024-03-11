@@ -10,7 +10,7 @@ public class EnemyScript : MonoBehaviour, IDamagable
 
     public NavMeshAgent navMeshAgent;
 
-    public GameObject itemToDrop;
+    public GameObject[] itemToDrop;
     public Transform itemspawnpoint;
 
     public LayerMask layerToWalkOn;
@@ -59,15 +59,7 @@ public class EnemyScript : MonoBehaviour, IDamagable
         }
     }
 
-    public void OnDmg(int dmgTaken)
-    {
-        enemyHp -= dmgTaken;
-        if (enemyHp <= 0)
-        {
-            Instantiate(itemToDrop, itemspawnpoint.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
-    }
+
 
 
     public IEnumerator despawnTimer()
@@ -78,6 +70,17 @@ public class EnemyScript : MonoBehaviour, IDamagable
 
     public void Damagable(int dmg)
     {
-        OnDmg(dmg);
+        enemyHp -= dmg;
+        if (enemyHp <= 0)
+        {
+            Instantiate(itemToDrop[0], itemspawnpoint.position, Quaternion.identity);
+            int spawnBrain = Random.Range(0, 2);
+
+            if(spawnBrain == 0 && itemToDrop[1])
+            {
+                Instantiate(itemToDrop[1], itemspawnpoint.position, Quaternion.identity);
+            }
+            Destroy(gameObject);
+        }
     }
 }

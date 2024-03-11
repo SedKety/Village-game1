@@ -13,6 +13,8 @@ TagManager:
   - ResourceNodeManager
   - EnemyChecker
   - Enemy
+  - BossSpawner
+  - Brainboss
   layers:
   - Default
   - TransparentFX

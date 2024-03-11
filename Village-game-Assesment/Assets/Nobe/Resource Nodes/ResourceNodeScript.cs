@@ -13,10 +13,10 @@ public class ResourceNodeScript : MonoBehaviour, IDamagable
 
     public GameObject enemyObject;
 
-    public void OnDmg(int dmgTaken)
+    public void Damagable(int dmg)
     {
-        nodeHealth -= dmgTaken;
-        if(transform.localScale != new Vector3(0.25f, 0.25f, 0.25f))
+        nodeHealth -= dmg;
+        if (transform.localScale != new Vector3(0.25f, 0.25f, 0.25f))
         {
             transform.localScale -= new Vector3(0.25f, 0.25f, 0.25f);
         }
@@ -24,17 +24,12 @@ public class ResourceNodeScript : MonoBehaviour, IDamagable
         {
             Instantiate(itemToDrop, itemspawnpoint.position, Quaternion.identity);
             Destroy(gameObject);
-           int  spawnEnemyOrNot = Random.Range(0, 2);
-            if(spawnEnemyOrNot == 0 && enemyObject) 
+            int spawnEnemyOrNot = Random.Range(0, 2);
+            if (spawnEnemyOrNot == 0 && enemyObject)
             {
                 Instantiate(enemyObject, itemspawnpoint.position, Quaternion.identity);
             }
 
         }
-    }
-
-    public void Damagable(int dmg)
-    {
-        OnDmg(dmg);
     }
 }
