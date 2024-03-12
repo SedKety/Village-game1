@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2cabc87f918d9540a7c48bbc97e5ec8, type: 3}
+  m_Name: Fried crab
+  m_EditorClassIdentifier: 
+  id: 8
+  itemSprite: {fileID: 21300000, guid: 99ebe6b267bca0c45bb9769a75563118, type: 3}
+  itemName: Crab
+  itemDescription: Hehe kreb, but fried
+  itemPrefab: {fileID: 3571580016788956916, guid: b4f956cd0e3fc8944b8a3557b2a2e5ac,
+    type: 3}
+  type: 1
+  foodToReplenish: 15
+  healthToHeal: 10

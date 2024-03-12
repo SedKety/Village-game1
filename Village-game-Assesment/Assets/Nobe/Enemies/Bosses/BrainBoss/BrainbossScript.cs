@@ -15,7 +15,7 @@ public class BrainbossScript : MonoBehaviour, IDamagable
 
     public Collider playerCollider;
     private Rigidbody rb;
-    public void Damagable(int dmg)
+    public void Damagable(int dmg, GameObject weaponUsed)
     {
         hp -= dmg;
         if (hp <= 0)

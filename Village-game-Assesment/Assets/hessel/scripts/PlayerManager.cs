@@ -28,31 +28,17 @@ public class PlayerManager : MonoBehaviour
     }
     private void Update()
     {
-        if(health >= maxHealth)
+        if (health >= maxHealth)
         {
             health = maxHealth;
         }
-        if(mana >= maxMana)
+        if (mana >= maxMana)
         {
             mana = maxMana;
         }
-        if(food >= maxFood)
+        if (food >= maxFood)
         {
             food = maxFood;
-        }
-
-
-        if(Input.GetMouseButton(0))
-        {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if(Physics.Raycast(ray, out hit, 5))
-            {
-                if (hit.collider.CompareTag("Material"))
-                {
-                    hit.collider.GetComponent<ItemPickup>().OnPickUp();
-                }
-            }
         }
     }
 

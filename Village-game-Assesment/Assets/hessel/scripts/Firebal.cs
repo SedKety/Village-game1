@@ -15,7 +15,7 @@ public class Firebal : MonoBehaviour
         if (collision.transform.GetComponent<IDamagable>() != null)
         {
             var objectToDmg = collision.transform.GetComponent<IDamagable>();
-            objectToDmg.Damagable(dmg);
+            objectToDmg.Damagable(dmg, gameObject);
             var explosion = Instantiate(explosionParticles, transform.position, Quaternion.identity);
             Destroy(explosion, 1);
             Destroy(gameObject);

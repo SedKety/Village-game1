@@ -59,14 +59,14 @@ public class InventoryManager : MonoBehaviour
 
     public void OpenInventory()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().canILook = false;
+        GameObject.FindAnyObjectByType<Movement>().canILook = false;
         playerSliders.SetActive(false);
 
     }
 
     public void CloseInventory()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().canILook = true;
+        GameObject.FindAnyObjectByType<Movement>().canILook = true;
         playerSliders.SetActive(true);
     }
 }

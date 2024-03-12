@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyScript : MonoBehaviour, IDamagable
+public abstract class EnemyScript : MonoBehaviour, IDamagable
 {
     public int enemyDmg;
     public int enemyHp;
@@ -21,35 +21,6 @@ public class EnemyScript : MonoBehaviour, IDamagable
         navMeshAgent = GetComponent<NavMeshAgent>();
         shouldLookAtPlayer = false;
     }
-    public void Update()
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, -transform.up, out hit))
-        {
-            transform.up = hit.normal;
-            if (shouldLookAtPlayer & navMeshAgent.destination != null)
-            {
-                transform.LookAt(navMeshAgent.destination);
-            }
-
-        }
-    }
-
-    public void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("EnemyChecker"))
-        {
-            navMeshAgent.destination = (other.transform.position);
-            shouldLookAtPlayer = true;
-        }
-    }
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("EnemyChecker"))
-        {
-            shouldLookAtPlayer = false;
-        }
-    }
 
     public void OnCollisionEnter(Collision collision)
     {
@@ -59,16 +30,7 @@ public class EnemyScript : MonoBehaviour, IDamagable
         }
     }
 
-
-
-
-    public IEnumerator despawnTimer()
-    {
-        yield return new WaitForSeconds(100);
-        Destroy(gameObject);
-    }
-
-    public void Damagable(int dmg)
+    public virtual void Damagable(int dmg, GameObject weaponUsed)
     {
         enemyHp -= dmg;
         if (enemyHp <= 0)
@@ -82,5 +44,11 @@ public class EnemyScript : MonoBehaviour, IDamagable
             }
             Destroy(gameObject);
         }
+    }
+
+    public IEnumerator despawnTimer()
+    {
+        yield return new WaitForSeconds(100);
+        Destroy(gameObject);
     }
 }

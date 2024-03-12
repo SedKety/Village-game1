@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IDamagable
 {
-    public void Damagable(int dmg);
+    public void Damagable(int dmg, GameObject weaponUsed);
 }

@@ -13,7 +13,7 @@ public class ResourceNodeScript : MonoBehaviour, IDamagable
 
     public GameObject enemyObject;
 
-    public void Damagable(int dmg)
+    public void Damagable(int dmg, GameObject weaponUsed)
     {
         nodeHealth -= dmg;
         if (transform.localScale != new Vector3(0.25f, 0.25f, 0.25f))

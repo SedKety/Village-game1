@@ -20,11 +20,7 @@ public class NukeScript : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
-        {
-            dmgList.Add(other.gameObject);
-        }
-        else if (other.CompareTag("ResourceNode"))
+        if (other.GetComponent<IDamagable>() != null)
         {
             dmgList.Add(other.gameObject);
         }
@@ -47,7 +43,7 @@ public class NukeScript : MonoBehaviour
             if (gameobject != null)
             {
                 var gameobjectToDmg = gameobject.GetComponent<IDamagable>();
-                gameobjectToDmg.Damagable(nukeDmg);
+                gameobjectToDmg.Damagable(nukeDmg, gameobject);
             }
         }
     }
