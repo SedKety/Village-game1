@@ -91,6 +91,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7971272690199990457}
+    - targetCorrespondingSourceObject: {fileID: -516098083770646512, guid: c7b2b9cd2a8cf3a4b90120e264859dd6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4229255869642840777}
   m_SourcePrefab: {fileID: 100100000, guid: c7b2b9cd2a8cf3a4b90120e264859dd6, type: 3}
 --- !u!1 &1023226250534217898 stripped
 GameObject:
@@ -120,3 +124,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4493585093827132993, guid: c7b2b9cd2a8cf3a4b90120e264859dd6, type: 3}
+--- !u!114 &4229255869642840777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023226250534217898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694298407ecb8724cb1c2f117b4d9c2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeHealth: 10
+  itemToDrop: {fileID: 4692566644319850740, guid: 0ddc21498c6649f45a7d889ded9a816e,
+    type: 3}
+  itemspawnpoint: {fileID: 5642671636386509079}
+  enemyObject: {fileID: 0}
+--- !u!4 &5642671636386509079 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4083501151425157549, guid: c7b2b9cd2a8cf3a4b90120e264859dd6,
+    type: 3}
+  m_PrefabInstance: {fileID: 8567334527580842170}
+  m_PrefabAsset: {fileID: 0}

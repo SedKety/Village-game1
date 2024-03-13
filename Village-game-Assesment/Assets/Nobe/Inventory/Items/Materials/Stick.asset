@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5488479954be35c469cf59aba7a202bd, type: 3}
+  m_Name: Stick
+  m_EditorClassIdentifier: 
+  id: 10
+  itemSprite: {fileID: 21300000, guid: a32e6bf3bead0d9478e0b08010b15e96, type: 3}
+  itemName: Stick
+  itemDescription: God's greatest gift to mankind
+  itemPrefab: {fileID: 4692566644319850740, guid: 0ddc21498c6649f45a7d889ded9a816e,
+    type: 3}
+  type: 0

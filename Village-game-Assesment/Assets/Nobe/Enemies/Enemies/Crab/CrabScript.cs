@@ -8,7 +8,7 @@ public class CrabScript : EnemyScript
     {
         if (other.CompareTag("EnemyChecker"))
         {
-            navMeshAgent.destination = (other.transform.position);
+            navMeshAgent.destination = other.transform.position;
             shouldLookAtPlayer = true;
         }
     }
