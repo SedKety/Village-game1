@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Brain
   m_EditorClassIdentifier: 
   id: 6
-  itemSprite: {fileID: 21300000, guid: 5ea9f2fe310d64742a0f5e9655382a9e, type: 3}
+  itemSprite: {fileID: 21300000, guid: 92eed3968170a434d9424f5dc1c7fd43, type: 3}
   itemName: Brain
   itemDescription: Are these creatures even supposed to have one?!?!?
   itemPrefab: {fileID: 1872954046833510746, guid: 37b42e6c16466fc4696b2ddfc00e1fd6,

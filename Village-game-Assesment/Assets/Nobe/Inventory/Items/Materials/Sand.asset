@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Sand
   m_EditorClassIdentifier: 
   id: 5
-  itemSprite: {fileID: 21300000, guid: 25e114a2a90ec454781ed70599139d5b, type: 3}
+  itemSprite: {fileID: 21300000, guid: cd84ee835e21c0643a509c59f4144371, type: 3}
   itemName: Sand
   itemDescription: Its sand
-  itemPrefab: {fileID: 7836550587454169144, guid: 2c29047a9d25cf840a1b9e2bdac2daff,
+  itemPrefab: {fileID: 5817418781844086787, guid: e496ed4119c5a9b4097b0eaa4448302a,
     type: 3}
   type: 0

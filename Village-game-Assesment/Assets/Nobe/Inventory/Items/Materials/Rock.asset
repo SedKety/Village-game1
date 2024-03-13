@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Rock
   m_EditorClassIdentifier: 
   id: 3
-  itemSprite: {fileID: 21300000, guid: f41c5dd51bd63774c996c9c360676117, type: 3}
+  itemSprite: {fileID: 21300000, guid: f8718d8e3a2a91e4b82d142facdf3ccc, type: 3}
   itemName: Rock
   itemDescription: Its an piece of stone, surprised its not called an pebble
   itemPrefab: {fileID: 3660127581256195500, guid: 9a280cd8e6bd9eb47a0775412f65c54b,
     type: 3}
+  type: 0

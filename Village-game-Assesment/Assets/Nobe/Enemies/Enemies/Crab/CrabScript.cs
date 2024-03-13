@@ -37,7 +37,7 @@ public class CrabScript : EnemyScript
         enemyHp -= dmg;
         if (enemyHp <= 0)
         {
-            if (weaponUsed.GetComponent<Firebal>() != null)
+            if (weaponUsed.GetComponent<Firebal>() != null  || weaponUsed.GetComponent<ExplosionScript>() != null) 
             {
                 Instantiate(itemToDrop[2], itemspawnpoint.transform.position, gameObject.transform.rotation);
                 Destroy(gameObject);

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 8
   itemSprite: {fileID: 21300000, guid: 99ebe6b267bca0c45bb9769a75563118, type: 3}
-  itemName: Crab
+  itemName: Fried Crab
   itemDescription: Hehe kreb, but fried
   itemPrefab: {fileID: 3571580016788956916, guid: b4f956cd0e3fc8944b8a3557b2a2e5ac,
     type: 3}

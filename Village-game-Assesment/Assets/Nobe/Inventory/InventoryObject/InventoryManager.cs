@@ -16,6 +16,8 @@ public class InventoryManager : MonoBehaviour
 
 
     public GameObject playerSliders;
+
+    public TextMeshProUGUI inventoryFull;
     private void Awake()
     {
         inventoryManager = this;
@@ -27,6 +29,11 @@ public class InventoryManager : MonoBehaviour
             OpenInventory();
             inventory.SetActive(true);
             ListItems();
+        }
+
+        if (inventoryFull.gameObject.activeSelf)
+        {
+            Invoke("inventoryFullTextOff", 1f);
         }
     }
 
@@ -51,8 +58,6 @@ public class InventoryManager : MonoBehaviour
             TextMeshProUGUI itemName = obj.transform.GetComponentInChildren<TextMeshProUGUI>();
             RawImage itemPicture = obj.transform.GetComponentInChildren<RawImage>();
             obj.GetComponent<InventorySlotScript>().item = Item;
-
-            itemName.text = Item.itemName;
             itemPicture.texture = Item.itemSprite.texture;
         }
     }
@@ -68,5 +73,11 @@ public class InventoryManager : MonoBehaviour
     {
         GameObject.FindAnyObjectByType<Movement>().canILook = true;
         playerSliders.SetActive(true);
+    }
+
+
+    void inventoryFullTextOff()
+    {
+        inventoryFull.gameObject.SetActive(false);
     }
 }

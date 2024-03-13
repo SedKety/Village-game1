@@ -19,8 +19,16 @@ public class ItemPickup : MonoBehaviour, IInteractable
 
     public void Iinteractable()
     {
-        InventoryManager.inventoryManager.OnItemAdd(thisItem);
-        GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>().ListItems();
-        Destroy(gameObject);
+        InventoryManager inventoryManager = FindAnyObjectByType<InventoryManager>();
+        if(inventoryManager.items.Count <= 29 )
+        {
+            InventoryManager.inventoryManager.OnItemAdd(thisItem);
+            inventoryManager.ListItems();
+            Destroy(gameObject);
+        }
+        else if(inventoryManager.items.Count >= 29)
+        {
+            inventoryManager.inventoryFull.gameObject.SetActive(true);
+        }
     }
 }
