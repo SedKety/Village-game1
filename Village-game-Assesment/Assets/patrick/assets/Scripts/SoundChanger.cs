@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SoundChanger : MonoBehaviour
 {
     public Slider slider;
-    public GameObject mainMenu;
+    public GameObject backButton;
     private void Start()
     {
         slider = GetComponent<Slider>();
@@ -14,8 +14,8 @@ public class SoundChanger : MonoBehaviour
     }
     void OnStart()
     {
-        AudioListener.volume = mainMenu.GetComponent<SaveSettings>().settingsData.volume;
-        slider.value = mainMenu.GetComponent<SaveSettings>().settingsData.volume;
+        AudioListener.volume = backButton.GetComponent<SaveSettings>().settingsData.volume;
+        slider.value = backButton.GetComponent<SaveSettings>().settingsData.volume;
     }
     public void ChangeSound()
     {

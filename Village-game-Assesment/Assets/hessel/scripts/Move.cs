@@ -16,7 +16,6 @@ public class Movement : MonoBehaviour
     public float mouseSensitivity;
     [SerializeField] Transform cameraHolder;
     private float verticalLookRotation;
-    public GameObject mainMenu;
 
     public bool canILook;
     private void Start()

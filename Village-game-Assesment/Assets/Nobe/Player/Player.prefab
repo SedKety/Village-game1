@@ -240,7 +240,6 @@ GameObject:
   - component: {fileID: 3082459786029251788}
   - component: {fileID: 6544041037879700689}
   - component: {fileID: -3267720872274985060}
-  - component: {fileID: 1809217347746770831}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -355,8 +354,6 @@ MonoBehaviour:
   jumpVelocity: 15
   mouseSensitivity: 10
   cameraHolder: {fileID: 1439817037113886365}
-  mainMenu: {fileID: 9178022352370257092, guid: 278714300278ae948b55e69f36a429ed,
-    type: 3}
   canILook: 0
 --- !u!54 &9145972788505592631
 Rigidbody:
@@ -456,17 +453,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f275affbaac9b4f45bb296060744f080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1809217347746770831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7689586637743565165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9c9059cec6f5ec49bbfb87b66ca7690, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menu: {fileID: 9178022352370257092, guid: 278714300278ae948b55e69f36a429ed, type: 3}
-  movementScript: {fileID: 6789186919950649852}
