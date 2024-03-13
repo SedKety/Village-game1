@@ -15,6 +15,7 @@ TagManager:
   - Enemy
   - BossSpawner
   - Brainboss
+  - Map
   layers:
   - Default
   - TransparentFX
