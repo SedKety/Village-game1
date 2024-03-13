@@ -10,7 +10,7 @@ public class InteractionScript : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, 10))
             {
                 if (hit.collider.GetComponent<IInteractable>() != null)
                 {
