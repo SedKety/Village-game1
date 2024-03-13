@@ -9,7 +9,7 @@ public class ConsumableItem : Item
     public int healthToHeal;
 
 
-    public void ConsumeItem()
+    public virtual void ConsumeItem()
     {
         PlayerManager player = FindAnyObjectByType<PlayerManager>();
         InventoryManager inventory = FindAnyObjectByType<InventoryManager>();
