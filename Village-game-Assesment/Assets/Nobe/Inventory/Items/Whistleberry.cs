@@ -5,10 +5,15 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/Consumable/Whistleberry")]
 public class Whistleberry : ConsumableItem
 {
+    public static bool hasPlayed;
     public GameObject whistle;
     public override void ConsumeItem()
     {
         base.ConsumeItem();
-        Instantiate(whistle);
+        if (!hasPlayed)
+        {
+            Instantiate(whistle);
+            hasPlayed = true;
+        }
     }
 }
