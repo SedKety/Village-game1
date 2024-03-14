@@ -16,6 +16,7 @@ TagManager:
   - BossSpawner
   - Brainboss
   - Map
+  - InGameMenu
   layers:
   - Default
   - TransparentFX

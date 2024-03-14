@@ -11,9 +11,11 @@ public class MainMenuUi : MonoBehaviour
         Application.Quit();
     }
 
-    public void Start()
+
+    public void SaveAndQuit()
     {
-        
+        FindAnyObjectByType<SaveData>().Save();
+        //insert scene switch to main menu here when it gets added
     }
 
    

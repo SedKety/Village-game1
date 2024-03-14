@@ -13,6 +13,7 @@ public class SaveData : MonoBehaviour
         path = Application.dataPath + Path.AltDirectorySeparatorChar + "SaveData.json";
         player = GameObject.FindGameObjectWithTag("Player");
         playerData = Load();
+        StartCoroutine(AutoSave());
     }
 
     public void Save()
@@ -23,6 +24,7 @@ public class SaveData : MonoBehaviour
         playerData.food = player.GetComponent<PlayerManager>().food;
         playerData.mana = player.GetComponent<PlayerManager>().mana;
         playerData.health = player.GetComponent<PlayerManager>().health;
+        playerData.items = FindAnyObjectByType<InventoryManager>().items.ToArray();
         string json = JsonUtility.ToJson(playerData);
         Debug.Log(json);
 
@@ -49,5 +51,12 @@ public class SaveData : MonoBehaviour
             data = new PlayerData();
         }
         return data;
+    }
+    IEnumerator AutoSave()
+    {
+        yield return new WaitForSeconds(25);
+        Save();
+        Debug.Log("Autosaved");
+        StartCoroutine(AutoSave());
     }
 }

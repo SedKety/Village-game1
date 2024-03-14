@@ -241,6 +241,8 @@ GameObject:
   - component: {fileID: 6544041037879700689}
   - component: {fileID: -3267720872274985060}
   - component: {fileID: 1809217347746770831}
+  - component: {fileID: 2671075305692124070}
+  - component: {fileID: 699761289930402741}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -470,3 +472,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 9178022352370257092, guid: 278714300278ae948b55e69f36a429ed, type: 3}
   movementScript: {fileID: 6789186919950649852}
+--- !u!114 &2671075305692124070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7689586637743565165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f55d12e9e18d3f43a848b7a2fe68c23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerData:
+    x: 0
+    y: 0
+    z: 0
+    health: 0
+    mana: 0
+    food: 0
+    items: []
+  playerManager: {fileID: 0}
+  items: []
+--- !u!114 &699761289930402741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7689586637743565165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b15e9ca8b933be48a3f63b5527a1c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}
+  movement: {fileID: 6789186919950649852}

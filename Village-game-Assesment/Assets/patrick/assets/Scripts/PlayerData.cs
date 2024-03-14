@@ -8,4 +8,5 @@ public class PlayerData
 {
     public float x, y, z;
     public float health, mana, food;
+    public Item[] items;
 }
