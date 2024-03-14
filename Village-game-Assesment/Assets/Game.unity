@@ -7810,6 +7810,31 @@ PrefabInstance:
       propertyPath: movementScript
       value: 
       objectReference: {fileID: 1657900772}
+    - target: {fileID: 1310505328393741963, guid: 278714300278ae948b55e69f36a429ed,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1542365303336041725, guid: 278714300278ae948b55e69f36a429ed,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768023023466011565, guid: 278714300278ae948b55e69f36a429ed,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546197302260174860, guid: 278714300278ae948b55e69f36a429ed,
+        type: 3}
+      propertyPath: mainMenu
+      value: 
+      objectReference: {fileID: 1805029950}
+    - target: {fileID: 7750431209579900691, guid: 278714300278ae948b55e69f36a429ed,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9178022352370257092, guid: 278714300278ae948b55e69f36a429ed,
         type: 3}
       propertyPath: m_Name
