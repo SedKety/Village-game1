@@ -35,13 +35,18 @@ public class CrabScript : EnemyScript
     public override void Damagable(int dmg, GameObject weaponUsed)
     {
         enemyHp -= dmg;
-        if (enemyHp <= 0)
+
+        if (weaponUsed.GetComponent<Firebal>() != null || weaponUsed.GetComponent<ExplosionScript>() != null || weaponUsed.GetComponent<NukeScript>() != null)
         {
-            if (weaponUsed.GetComponent<Firebal>() != null  || weaponUsed.GetComponent<ExplosionScript>() != null) 
+            if (enemyHp <= 0)
             {
                 Instantiate(itemToDrop[2], itemspawnpoint.transform.position, gameObject.transform.rotation);
                 Destroy(gameObject);
             }
+        }
+        else
+        {
+            base.Damagable(0, weaponUsed);
         }
     }
 }

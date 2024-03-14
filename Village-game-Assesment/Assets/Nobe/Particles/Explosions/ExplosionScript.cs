@@ -10,7 +10,6 @@ public class ExplosionScript : MonoBehaviour
         if(other.gameObject.GetComponent<IDamagable>() != null)
         {
             other.gameObject.GetComponent<IDamagable>().Damagable(explosionDmg, gameObject);
-            Debug.Log(other);
         }
     }
 }

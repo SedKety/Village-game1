@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -16,9 +17,13 @@ public class PlayerManager : MonoBehaviour
     public float maxFood;
 
     public bool hungerEnabled;
+
+    public GameObject panel;
+    public GameObject deadScreen;
     // Start is called before the first frame update
     void Start()
     {
+
         health = 100;
         mana = 100;
         food = 100;
@@ -47,7 +52,9 @@ public class PlayerManager : MonoBehaviour
         health -= damage;
         if (health < 0)
         {
-            print("You Died");
+            deadScreen.SetActive(true);
+            panel.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
