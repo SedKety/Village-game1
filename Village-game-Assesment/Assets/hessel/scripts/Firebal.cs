@@ -10,19 +10,19 @@ public class Firebal : MonoBehaviour
     {
         Destroy(gameObject, 5);
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.collider.CompareTag("Player") == false)
+        if (other.CompareTag("Player") == false)
         {
-            if (collision.transform.GetComponent<IDamagable>() != null)
+            if (other.transform.GetComponent<IDamagable>() != null)
             {
-                var objectToDmg = collision.transform.GetComponent<IDamagable>();
+                var objectToDmg = other.transform.GetComponent<IDamagable>();
                 objectToDmg.Damagable(dmg, gameObject);
                 var explosion = Instantiate(explosionParticles, transform.position, Quaternion.identity);
                 Destroy(explosion, 1);
                 Destroy(gameObject);
             }
-            else if (collision.transform.GetComponent<IDamagable>() == null)
+            else if (other.transform.GetComponent<IDamagable>() == null)
             {
                 var explosion = Instantiate(explosionParticles, transform.position, Quaternion.identity);
                 Destroy(explosion, 1);

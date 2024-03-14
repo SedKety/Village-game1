@@ -8,8 +8,9 @@ public class Movement : MonoBehaviour
 {
     private float hor;
     private float vert;
-    private Vector3 dir;
+    //private Vector3 dir;
     public float speed;
+    public float maxSpeed;
     private bool onGround;
     public Rigidbody rb;
     public float jumpVelocity;
@@ -25,7 +26,7 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         canILook = true;
     }
-    void Update()
+    void FixedUpdate()
     {
         if (canILook)
         {
@@ -44,23 +45,25 @@ public class Movement : MonoBehaviour
         //player movement
         hor = Input.GetAxis("Horizontal");
         vert = Input.GetAxis("Vertical");
-        dir.x = hor;
-        dir.z = vert;
-        transform.Translate(dir * speed * Time.deltaTime);
+        Vector3 movementDirection = new Vector3(hor, 0f, vert).normalized;
+        rb.AddRelativeForce(movementDirection * speed, ForceMode.Impulse);
+        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+
+        //dir.x = hor;
+        //dir.z = vert;
+        //transform.Translate(dir * speed * Time.deltaTime);
 
         //jump
         if (Input.GetButton("Jump") && onGround)
         {
-            rb.velocity = new Vector3(0, jumpVelocity, 0);
+            rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
+            //rb.velocity = new Vector3(0, jumpVelocity, 0);
             onGround = false;
         }
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            onGround = true;
-        }
+        onGround = true;
     }
     private void OnCollisionExit(Collision collision)
     {
