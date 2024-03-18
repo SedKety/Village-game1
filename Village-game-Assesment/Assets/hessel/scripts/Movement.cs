@@ -22,6 +22,7 @@ public class Movement : MonoBehaviour
     public bool canILook;
     private void Start()
     {
+        Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody>();
         canILook = true;

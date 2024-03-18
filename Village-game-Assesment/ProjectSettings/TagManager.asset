@@ -18,6 +18,7 @@ TagManager:
   - Map
   - InGameMenu
   - FireBall
+  - ResourceNodeCollider
   layers:
   - Default
   - TransparentFX

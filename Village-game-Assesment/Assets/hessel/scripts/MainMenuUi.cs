@@ -2,20 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuUi : MonoBehaviour
 {
-   
-    public void LeaveGame()
-    {
-        Application.Quit();
-    }
-
-
     public void SaveAndQuit()
     {
         FindAnyObjectByType<SaveData>().Save();
-        //insert scene switch to main menu here when it gets added
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
    

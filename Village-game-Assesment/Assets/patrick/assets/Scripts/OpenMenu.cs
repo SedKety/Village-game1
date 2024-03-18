@@ -19,6 +19,7 @@ public class OpenMenu : MonoBehaviour
             menu.SetActive(true);
             Time.timeScale = 0f;
             movement.canILook = false;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

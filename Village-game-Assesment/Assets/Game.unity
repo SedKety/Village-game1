@@ -535,6 +535,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BushSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 4071702386040522570, guid: c8ee583ca6f99ba409fe6add1935a130,
+        type: 3}
+      propertyPath: m_TagString
+      value: ResourceNodeCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -645,6 +650,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SandPileSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 4071702386040522570, guid: c8ee583ca6f99ba409fe6add1935a130,
+        type: 3}
+      propertyPath: m_TagString
+      value: ResourceNodeCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -691,7 +701,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.033333335
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 378f8fb5cad43d84f8c277dc3dc7c16f, type: 2}
+  m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
 --- !u!4 &174112877 stripped
 Transform:
@@ -2886,6 +2896,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SandPileSpawner (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4071702386040522570, guid: c8ee583ca6f99ba409fe6add1935a130,
+        type: 3}
+      propertyPath: m_TagString
+      value: ResourceNodeCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3173,6 +3188,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SandPileSpawner (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4071702386040522570, guid: c8ee583ca6f99ba409fe6add1935a130,
+        type: 3}
+      propertyPath: m_TagString
+      value: ResourceNodeCollider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4098,6 +4118,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BushSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 4071702386040522570, guid: c8ee583ca6f99ba409fe6add1935a130,
+        type: 3}
+      propertyPath: m_TagString
+      value: ResourceNodeCollider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5162,6 +5187,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 4071702386040522570, guid: c8ee583ca6f99ba409fe6add1935a130,
+        type: 3}
+      propertyPath: m_TagString
+      value: ResourceNodeCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6165,6 +6195,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SandPileSpawner (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4071702386040522570, guid: c8ee583ca6f99ba409fe6add1935a130,
+        type: 3}
+      propertyPath: m_TagString
+      value: ResourceNodeCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6819,6 +6854,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 4071702386040522570, guid: c8ee583ca6f99ba409fe6add1935a130,
+        type: 3}
+      propertyPath: m_TagString
+      value: ResourceNodeCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6999,6 +7039,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 4071702386040522570, guid: c8ee583ca6f99ba409fe6add1935a130,
+        type: 3}
+      propertyPath: m_TagString
+      value: ResourceNodeCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7092,6 +7137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: StoneSpawner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4071702386040522570, guid: c8ee583ca6f99ba409fe6add1935a130,
+        type: 3}
+      propertyPath: m_TagString
+      value: ResourceNodeCollider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7259,6 +7309,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SandPileSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 4071702386040522570, guid: c8ee583ca6f99ba409fe6add1935a130,
+        type: 3}
+      propertyPath: m_TagString
+      value: ResourceNodeCollider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7860,6 +7915,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 453655373582817503, guid: 278714300278ae948b55e69f36a429ed,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 453655373582817503, guid: 278714300278ae948b55e69f36a429ed,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: LeaveGame
+      objectReference: {fileID: 0}
     - target: {fileID: 906934249759762643, guid: 278714300278ae948b55e69f36a429ed,
         type: 3}
       propertyPath: movementScript
@@ -7874,6 +7939,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466365244979859871, guid: 278714300278ae948b55e69f36a429ed,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4768023023466011565, guid: 278714300278ae948b55e69f36a429ed,
         type: 3}
@@ -8385,6 +8455,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SandPileSpawner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4071702386040522570, guid: c8ee583ca6f99ba409fe6add1935a130,
+        type: 3}
+      propertyPath: m_TagString
+      value: ResourceNodeCollider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

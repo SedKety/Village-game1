@@ -51,11 +51,11 @@ public class ResolutionScript : MonoBehaviour
     //wel heel kut maar tja
     void AnotherDelay()
     {
-        SetResolution(backButton.GetComponent<SaveSettings>().settingsData.resolutionIndex);
+        SetResolution(FindAnyObjectByType<SaveSettings>().settingsData.resolutionIndex);
     }
     void Delay(int resolutionIndex)
     {
-        backButton.GetComponent<SaveSettings>().settingsData.resolutionIndex = resolutionIndex;
+        FindAnyObjectByType<SaveSettings>().settingsData.resolutionIndex = resolutionIndex;
     }
 
     public void SetResolution(int resolutionIndex)

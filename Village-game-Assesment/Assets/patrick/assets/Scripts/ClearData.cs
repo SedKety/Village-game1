@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ClearData : MonoBehaviour
 {
-    public string path;
+    private string path;
     private void Start()
     {
         path = Application.dataPath + Path.AltDirectorySeparatorChar + "SaveData.json";

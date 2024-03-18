@@ -9,6 +9,7 @@ public class GameMenu : MonoBehaviour
     public void BackToGame()
     {
         movementScript.canILook = true;
+        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
         menu.SetActive(false);
     }

@@ -8,6 +8,7 @@ public class SaveData : MonoBehaviour
     public PlayerData playerData;
     public GameObject player;
     private string path;
+    public int autoSaveTimer = 25;
     void Start()
     {
         path = Application.dataPath + Path.AltDirectorySeparatorChar + "SaveData.json";

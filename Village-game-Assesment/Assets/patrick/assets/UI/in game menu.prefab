@@ -821,7 +821,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &906934249759762643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3586,9 +3586,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.6784314, g: 1, b: 0.63529414, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.066135645, g: 1, b: 0, a: 1}
+    m_PressedColor: {r: 0.13936074, g: 0.6792453, b: 0.09868278, a: 1}
+    m_SelectedColor: {r: 0.21053493, g: 1, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3604,7 +3604,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 4349460607829497427}
+  m_TargetGraphic: {fileID: 5894919983419288070}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -4008,18 +4008,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 9195139922225472826}
         m_TargetAssemblyTypeName: MainMenuUi, Assembly-CSharp
-        m_MethodName: LeaveGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 9195139922225472826}
-        m_TargetAssemblyTypeName: MainMenuUi, Assembly-CSharp
         m_MethodName: SaveAndQuit
         m_Mode: 1
         m_Arguments:
@@ -4274,7 +4262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &127074811723452594
 RectTransform:
   m_ObjectHideFlags: 0
