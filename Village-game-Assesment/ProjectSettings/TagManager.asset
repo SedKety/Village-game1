@@ -17,6 +17,7 @@ TagManager:
   - Brainboss
   - Map
   - InGameMenu
+  - FireBall
   layers:
   - Default
   - TransparentFX

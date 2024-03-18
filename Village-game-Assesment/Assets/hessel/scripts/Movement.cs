@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
 {
     private float hor;
     private float vert;
-    //private Vector3 dir;
+    private Vector3 dir;
     public float speed;
     public float maxSpeed;
     private bool onGround;
@@ -45,19 +45,14 @@ public class Movement : MonoBehaviour
         //player movement
         hor = Input.GetAxis("Horizontal");
         vert = Input.GetAxis("Vertical");
-        Vector3 movementDirection = new Vector3(hor, 0f, vert).normalized;
-        rb.AddRelativeForce(movementDirection * speed, ForceMode.Impulse);
-        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
-
-        //dir.x = hor;
-        //dir.z = vert;
-        //transform.Translate(dir * speed * Time.deltaTime);
+        dir.x = hor;
+        dir.z = vert;
+        transform.Translate(dir * speed * Time.deltaTime);
 
         //jump
         if (Input.GetButton("Jump") && onGround)
         {
-            rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
-            //rb.velocity = new Vector3(0, jumpVelocity, 0);
+            rb.velocity = new Vector3(0, jumpVelocity, 0);
             onGround = false;
         }
     }
