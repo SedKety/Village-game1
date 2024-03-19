@@ -7,20 +7,25 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager inventoryManager;
-    public List<Item> items = new List<Item>();
+    public List<Item> items;
 
     [SerializeField] Transform itemContent;
     [SerializeField] GameObject inventoryItem;
 
     public GameObject inventory;
 
+    public Movement movementScript;
 
     public GameObject playerSliders;
 
     public TextMeshProUGUI inventoryFull;
     private void Awake()
     {
-        inventoryManager = this;
+        if(inventoryManager == null)
+        {
+            inventoryManager = this;
+        }
+        movementScript = GameObject.FindAnyObjectByType<Movement>();
     }
     public void Update()
     {
@@ -64,14 +69,14 @@ public class InventoryManager : MonoBehaviour
 
     public void OpenInventory()
     {
-        GameObject.FindAnyObjectByType<Movement>().canILook = false;
+        movementScript.canILook = false;
         playerSliders.SetActive(false);
 
     }
 
     public void CloseInventory()
     {
-        GameObject.FindAnyObjectByType<Movement>().canILook = true;
+        movementScript.canILook = true;
         playerSliders.SetActive(true);
     }
 
