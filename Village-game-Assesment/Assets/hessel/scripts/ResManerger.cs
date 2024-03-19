@@ -46,21 +46,20 @@ public class ResManerger : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
-        Invoke("DelayedFunction", 0.001f);
     }
 
-
-    void DelayedFunction()
+    public void Initialize()
     {
         SetResolution(saveData.playerData.resolutionIndex);
         resolutionDropdown.value = saveData.playerData.resolutionIndex;
         resolutionDropdown.RefreshShownValue();
         currentRes = Screen.currentResolution.ToString();
     }
+
     public void SetResolution(int resolutionIndex)
     {
-        saveData.playerData.resolutionIndex = resolutionIndex;
         Resolution resolution = resolutionList[resolutionIndex];
+        saveData.playerData.resolutionIndex = resolutionIndex;
         Screen.SetResolution(resolution.width, resolution.height, true);
     }
 }

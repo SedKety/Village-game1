@@ -836,6 +836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 9178022352370257092}
   movementScript: {fileID: 0}
+  sliders: {fileID: 0}
 --- !u!1 &1542365303336041725
 GameObject:
   m_ObjectHideFlags: 0
@@ -2672,7 +2673,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5542379866914680293}
+  m_Father: {fileID: 127074811723452594}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8816166084883383634
 MonoBehaviour:
@@ -2910,9 +2911,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2160682741063802868}
   - {fileID: 2354739913374574524}
-  - {fileID: 4807343572569568343}
   - {fileID: 1578904094690588576}
   - {fileID: 7280769725338360629}
   m_Father: {fileID: 127074811723452594}
@@ -3765,7 +3764,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5542379866914680293}
+  m_Father: {fileID: 127074811723452594}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3188404150201896299
 MonoBehaviour:
@@ -4304,6 +4303,7 @@ GameObject:
   - component: {fileID: 2151557225866290796}
   - component: {fileID: 879179259666727504}
   - component: {fileID: 5311714232173735803}
+  - component: {fileID: 4516916045983803367}
   m_Layer: 5
   m_Name: in game menu
   m_TagString: InGameMenu
@@ -4323,6 +4323,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2160682741063802868}
+  - {fileID: 4807343572569568343}
   - {fileID: 5542379866914680293}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4410,3 +4412,17 @@ MonoBehaviour:
     resolutionIndex: 0
     fullscreen: 0
     volume: 0
+--- !u!114 &4516916045983803367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9178022352370257092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0c608beecbb9c4baf5af57b078996e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 5613502137358261711}
+  mainMenu: {fileID: 9178022352370257092}

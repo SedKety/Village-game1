@@ -7,8 +7,8 @@ using UnityEngine;
 public class PlayerData
 {
     //ingame
-    public float x, y, z;
-    public float health, mana, food;
+    public float x = 470, y = 80, z = 1071;
+    public float health = 100, mana = 100, food = 100;
     public Item[] items;
     //settings
     public int resolutionIndex;

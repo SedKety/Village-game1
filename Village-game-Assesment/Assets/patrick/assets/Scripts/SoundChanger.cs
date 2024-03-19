@@ -7,12 +7,7 @@ public class SoundChanger : MonoBehaviour
 {
     public Slider slider;
     public GameObject mainMenu;
-    private void Start()
-    {
-        slider = GetComponent<Slider>();
-        Invoke("OnStart", 0.001f);
-    }
-    void OnStart()
+    public void Initialize()
     {
         AudioListener.volume = FindAnyObjectByType<SaveData>().playerData.sound;
         slider.value = FindAnyObjectByType<SaveData>().playerData.sound;

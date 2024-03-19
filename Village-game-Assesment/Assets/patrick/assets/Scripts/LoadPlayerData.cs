@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LoadPlayerData : MonoBehaviour
 {
@@ -9,15 +10,12 @@ public class LoadPlayerData : MonoBehaviour
     public PlayerManager playerManager;
     private string path;
     public Item[] items;
-    void Start()
-    {
-        Invoke("Load", 0.001f);
-    }
-    void Load()
+    public void Initialize()
     {
         playerData = FindAnyObjectByType<SaveData>().playerData;
         playerManager = gameObject.GetComponent<PlayerManager>();
         path = Application.dataPath + Path.AltDirectorySeparatorChar + "SaveData.json";
+
         if (File.Exists(path))
         {
             gameObject.transform.position = new Vector3(playerData.x, playerData.y, playerData.z);

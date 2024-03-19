@@ -748,6 +748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resolutionDropdown: {fileID: 5346423480779289582}
   saveData: {fileID: 0}
+  currentRes: 
 --- !u!1 &1822611916510219270
 GameObject:
   m_ObjectHideFlags: 0
@@ -2707,7 +2708,7 @@ GameObject:
   - component: {fileID: 7150359646702252547}
   - component: {fileID: 6286610941529321651}
   - component: {fileID: 5800840030230503676}
-  - component: {fileID: 4952344263272025023}
+  - component: {fileID: 871730248606200193}
   m_Layer: 5
   m_Name: main menu
   m_TagString: Untagged
@@ -2776,10 +2777,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2804,7 +2805,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4952344263272025023
+--- !u!114 &871730248606200193
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2813,9 +2814,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5409198112267105302}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28002e4e8cac3b34b92a4a6c9d685e2d, type: 3}
+  m_Script: {fileID: 11500000, guid: ff0c608beecbb9c4baf5af57b078996e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 816655883743816316}
+  mainMenu: {fileID: 5409198112267105302}
 --- !u!1 &5481031421482922897
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SaveData : MonoBehaviour
 {
@@ -12,14 +13,20 @@ public class SaveData : MonoBehaviour
     public bool autoSaveEnabled;
     public bool playerSave;
     public int max = 100;
-    void Awake()
+    void Start()
     {
         path = Application.dataPath + Path.AltDirectorySeparatorChar + "SaveData.json";
         playerData = Load();
-    }
-    private void Start()
-    {
         player = GameObject.FindGameObjectWithTag("Player");
+        if (playerSave)
+        {
+            player.GetComponent<LoadPlayerData>().Initialize();
+        }
+        FindAnyObjectByType<SoundChanger>().Initialize();
+        if (!playerSave)
+        {
+            FindAnyObjectByType<ResManerger>().Initialize();
+        }
         if (autoSaveEnabled)
         {
             StartCoroutine(AutoSave());
@@ -37,15 +44,6 @@ public class SaveData : MonoBehaviour
             playerData.mana = player.GetComponent<PlayerManager>().mana;
             playerData.health = player.GetComponent<PlayerManager>().health;
             playerData.items = FindAnyObjectByType<InventoryManager>().items.ToArray();
-        }
-        else
-        {
-            playerData.x = GameObject.FindGameObjectWithTag("SpawnLocation").transform.position.x;
-            playerData.y = GameObject.FindGameObjectWithTag("SpawnLocation").transform.position.y;
-            playerData.z = GameObject.FindGameObjectWithTag("SpawnLocation").transform.position.z;
-            playerData.food = max;
-            playerData.mana = max;
-            playerData.health = max;
         }
 
         string json = JsonUtility.ToJson(playerData);
