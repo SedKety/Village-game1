@@ -44,6 +44,7 @@ public class Movement : MonoBehaviour
 
 
         //player movement
+        
         hor = Input.GetAxis("Horizontal");
         vert = Input.GetAxis("Vertical");
         dir.x = hor;
@@ -55,6 +56,11 @@ public class Movement : MonoBehaviour
         {
             rb.velocity = new Vector3(0, jumpVelocity, 0);
             onGround = false;
+        }
+        //sprint
+        if (Input.GetButtonDown("Sprint"))
+        {
+            rb.velocity *= 5.0f;
         }
     }
     private void OnCollisionEnter(Collision collision)

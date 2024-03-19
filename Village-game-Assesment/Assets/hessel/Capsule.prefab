@@ -150,9 +150,16 @@ GameObject:
   - component: {fileID: 2293855878384611513}
   - component: {fileID: 1597564878440405466}
   - component: {fileID: 6465857301224783555}
-  - component: {fileID: 8986991410883049750}
   - component: {fileID: 4659435335186054610}
   - component: {fileID: 6761808738022838190}
+  - component: {fileID: 2047252958668982845}
+  - component: {fileID: 3077266297749028474}
+  - component: {fileID: 7057090294622147578}
+  - component: {fileID: 1287847808670980589}
+  - component: {fileID: 2844070234368568665}
+  - component: {fileID: 2895434852449571953}
+  - component: {fileID: 4378241820308547417}
+  - component: {fileID: 5009930366046418050}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -249,24 +256,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8986991410883049750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5714031878365999956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 051a203c4769288408049c52219bc026, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 8
-  rb: {fileID: 4659435335186054610}
-  jumpVelocity: 5
-  mouseSensitivity: 40
-  cameraHolder: {fileID: 7138524764741882680}
-  canILook: 0
 --- !u!54 &4659435335186054610
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -275,7 +264,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5714031878365999956}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -291,9 +280,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &6761808738022838190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,8 +299,153 @@ MonoBehaviour:
   fireBall: {fileID: 7062057887187214215, guid: 746f03d3d5971b247ac5faec0763d5fe,
     type: 3}
   fireBallShotPoint: {fileID: 1494972519028703180}
-  playerManager: {fileID: 0}
+  playerManager: {fileID: 1287847808670980589}
   manaCost: 0
+--- !u!114 &2047252958668982845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5714031878365999956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9c9059cec6f5ec49bbfb87b66ca7690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}
+  movementScript: {fileID: 0}
+  sliders: {fileID: 0}
+--- !u!114 &3077266297749028474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5714031878365999956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 518911467262d5c49a68e21ddad7fc2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  groundDrag: 2
+  jumpForce: 30
+  walkSpeed: 0
+  sprintSpeed: 0
+  onGround: 0
+  orientation: {fileID: 3965284436823060394}
+--- !u!114 &7057090294622147578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5714031878365999956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda6dbfc4f9d080499be798a85e96d0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraHolder: {fileID: 7138524764741882680}
+  mainMenu: {fileID: 0}
+  mouseSensitivity: 40
+  canILook: 0
+--- !u!114 &1287847808670980589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5714031878365999956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5032248eba42dc04c9349f9a58bee50e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
+  hpRecoveryAmount: 0.5
+  mana: 100
+  maxMana: 100
+  manaRecoveryAmount: 1
+  food: 100
+  maxFood: 100
+  hungerEnabled: 1
+  panel: {fileID: 0}
+  deadScreen: {fileID: 0}
+--- !u!114 &2844070234368568665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5714031878365999956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e04b70a8b70c0764a9f655529b1ce494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nuke: {fileID: 5725062764036339875, guid: f31530e4366026740b750496715022d6, type: 3}
+  hitMarker: {fileID: 1073138579009271628, guid: 162b88d3ebce8c344a9fb95cc0b00643,
+    type: 3}
+  currentHitMarker: {fileID: 0}
+  airstrikeMode: 0
+  checkForGround:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!114 &2895434852449571953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5714031878365999956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f275affbaac9b4f45bb296060744f080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4378241820308547417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5714031878365999956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f55d12e9e18d3f43a848b7a2fe68c23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerData:
+    x: 470
+    y: 80
+    z: 1071
+    health: 100
+    mana: 100
+    food: 100
+    items: []
+    resolutionIndex: 0
+    fullscreen: 0
+    sound: 0
+  playerManager: {fileID: 0}
+  items: []
+--- !u!114 &5009930366046418050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5714031878365999956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b15e9ca8b933be48a3f63b5527a1c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}
+  movement: {fileID: 0}
+  sliders: {fileID: 0}
 --- !u!1 &6000812249433594425
 GameObject:
   m_ObjectHideFlags: 0
