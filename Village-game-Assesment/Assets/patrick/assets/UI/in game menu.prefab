@@ -1905,7 +1905,7 @@ MonoBehaviour:
         m_CallState: 1
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SaveSettings, Assembly-CSharp
-        m_MethodName: OnClicked
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2538,8 +2538,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ResolutionScript, Assembly-CSharp
+      - m_Target: {fileID: 3188404150201896299}
+        m_TargetAssemblyTypeName: ResManerger, Assembly-CSharp
         m_MethodName: SetResolution
         m_Mode: 0
         m_Arguments:
@@ -2910,6 +2910,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2160682741063802868}
   - {fileID: 2354739913374574524}
   - {fileID: 4807343572569568343}
   - {fileID: 1578904094690588576}
@@ -3734,6 +3735,53 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &8084281789368686794
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2160682741063802868}
+  - component: {fileID: 3188404150201896299}
+  m_Layer: 0
+  m_Name: reso manerger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2160682741063802868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8084281789368686794}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 15.643188, y: 27.830688, z: -149.12758}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5542379866914680293}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3188404150201896299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8084281789368686794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b438d6d3bad8bb24c8ba02ddcf652647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resolutionDropdown: {fileID: 1044717519671530008}
+  saveData: {fileID: 0}
+  currentRes: 
 --- !u!1 &8285099437113061759
 GameObject:
   m_ObjectHideFlags: 0
@@ -4358,3 +4406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42f0de80180d37444a09ef1f791f1b12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingsData:
+    resolutionIndex: 0
+    fullscreen: 0
+    volume: 0

@@ -5,17 +5,19 @@ using TMPro;
 using System.IO;
 using UnityEngine.UI;
 
-public class ResolutionScript : MonoBehaviour
+public class ResManerger : MonoBehaviour
 {
     [SerializeField] private TMP_Dropdown resolutionDropdown;
-    public GameObject backButton;
     private Resolution[] resolutions;
     private List<Resolution> resolutionList;
     private float currentRefRate;
     private int currentResolutionIndex = 0;
+    public SaveData saveData;
+    public string currentRes;
 
     void Start()
     {
+        saveData = FindAnyObjectByType<SaveData>();
         resolutions = Screen.resolutions;
         resolutionList = new List<Resolution>();
 
@@ -44,31 +46,21 @@ public class ResolutionScript : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
-
-        Invoke("AnotherDelay", 0.001f);
-    }
-    //unity will niet stoppen met erroren omdat hij probeert de save te veranderen voordat hij gemaakt wordt vgm en dit is een manier om te fixen
-    //wel heel kut maar tja
-    void AnotherDelay()
-    {
-        SetResolution(FindAnyObjectByType<SaveSettings>().settingsData.resolutionIndex);
-    }
-    void Delay(int resolutionIndex)
-    {
-        FindAnyObjectByType<SaveSettings>().settingsData.resolutionIndex = resolutionIndex;
+        Invoke("DelayedFunction", 0.001f);
     }
 
+
+    void DelayedFunction()
+    {
+        SetResolution(saveData.playerData.resolutionIndex);
+        resolutionDropdown.value = saveData.playerData.resolutionIndex;
+        resolutionDropdown.RefreshShownValue();
+        currentRes = Screen.currentResolution.ToString();
+    }
     public void SetResolution(int resolutionIndex)
     {
-        StartCoroutine(enumerator(resolutionIndex));
+        saveData.playerData.resolutionIndex = resolutionIndex;
         Resolution resolution = resolutionList[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, true);
     }
-
-    IEnumerator enumerator(int resolutionIndex)
-    {
-        yield return new WaitForSeconds(0.001f);
-        Delay(resolutionIndex);
-    }
-
 }

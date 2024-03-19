@@ -14,11 +14,12 @@ public class SoundChanger : MonoBehaviour
     }
     void OnStart()
     {
-        AudioListener.volume = mainMenu.GetComponent<SaveSettings>().settingsData.volume;
-        slider.value = mainMenu.GetComponent<SaveSettings>().settingsData.volume;
+        AudioListener.volume = FindAnyObjectByType<SaveData>().playerData.sound;
+        slider.value = FindAnyObjectByType<SaveData>().playerData.sound;
     }
     public void ChangeSound()
     {
+        FindAnyObjectByType<SaveData>().playerData.sound = slider.value;
         AudioListener.volume = slider.value;
         Debug.Log(AudioListener.volume);
     }

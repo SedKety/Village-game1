@@ -9,23 +9,45 @@ public class SaveData : MonoBehaviour
     public GameObject player;
     private string path;
     public int autoSaveTimer = 25;
-    void Start()
+    public bool autoSaveEnabled;
+    public bool playerSave;
+    public int max = 100;
+    void Awake()
     {
         path = Application.dataPath + Path.AltDirectorySeparatorChar + "SaveData.json";
-        player = GameObject.FindGameObjectWithTag("Player");
         playerData = Load();
-        StartCoroutine(AutoSave());
+    }
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (autoSaveEnabled)
+        {
+            StartCoroutine(AutoSave());
+        }
     }
 
     public void Save()
     {
-        playerData.x = player.transform.position.x;
-        playerData.y = player.transform.position.y;
-        playerData.z = player.transform.position.z;
-        playerData.food = player.GetComponent<PlayerManager>().food;
-        playerData.mana = player.GetComponent<PlayerManager>().mana;
-        playerData.health = player.GetComponent<PlayerManager>().health;
-        playerData.items = FindAnyObjectByType<InventoryManager>().items.ToArray();
+        if (playerSave)
+        {
+            playerData.x = player.transform.position.x;
+            playerData.y = player.transform.position.y;
+            playerData.z = player.transform.position.z;
+            playerData.food = player.GetComponent<PlayerManager>().food;
+            playerData.mana = player.GetComponent<PlayerManager>().mana;
+            playerData.health = player.GetComponent<PlayerManager>().health;
+            playerData.items = FindAnyObjectByType<InventoryManager>().items.ToArray();
+        }
+        else
+        {
+            playerData.x = GameObject.FindGameObjectWithTag("SpawnLocation").transform.position.x;
+            playerData.y = GameObject.FindGameObjectWithTag("SpawnLocation").transform.position.y;
+            playerData.z = GameObject.FindGameObjectWithTag("SpawnLocation").transform.position.z;
+            playerData.food = max;
+            playerData.mana = max;
+            playerData.health = max;
+        }
+
         string json = JsonUtility.ToJson(playerData);
         Debug.Log(json);
 
