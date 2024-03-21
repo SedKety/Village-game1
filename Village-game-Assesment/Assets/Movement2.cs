@@ -20,6 +20,7 @@ public class Movement2 : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
@@ -27,7 +28,7 @@ public class Movement2 : MonoBehaviour
     private void FixedUpdate()
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-        rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        rb.AddForce(moveDirection.normalized * moveSpeed * 10f * Time.deltaTime, ForceMode.Force);
     }
     private void Update()
     {
