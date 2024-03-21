@@ -234,7 +234,8 @@ GameObject:
   - component: {fileID: 649515696133397401}
   - component: {fileID: 5000376043725655117}
   - component: {fileID: 5794563508400962504}
-  - component: {fileID: 6789186919950649852}
+  - component: {fileID: 18785591247659122}
+  - component: {fileID: 2155795840378772434}
   - component: {fileID: 9145972788505592631}
   - component: {fileID: 534568149112226252}
   - component: {fileID: 3082459786029251788}
@@ -340,7 +341,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6789186919950649852
+--- !u!114 &18785591247659122
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -349,16 +350,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 7689586637743565165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 051a203c4769288408049c52219bc026, type: 3}
+  m_Script: {fileID: 11500000, guid: 518911467262d5c49a68e21ddad7fc2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  rb: {fileID: 9145972788505592631}
-  jumpVelocity: 15
-  mouseSensitivity: 10
+  moveSpeed: 5
+  groundDrag: 2
+  jumpForce: 5
+  walkSpeed: 0
+  sprintSpeed: 0
+  onGround: 0
+  orientation: {fileID: 2868613312019071830}
+--- !u!114 &2155795840378772434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7689586637743565165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda6dbfc4f9d080499be798a85e96d0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   cameraHolder: {fileID: 1439817037113886365}
-  mainMenu: {fileID: 9178022352370257092, guid: 278714300278ae948b55e69f36a429ed,
-    type: 3}
+  mainMenu: {fileID: 0}
+  mouseSensitivity: 5
   canILook: 0
 --- !u!54 &9145972788505592631
 Rigidbody:
@@ -426,6 +442,8 @@ MonoBehaviour:
   food: 100
   maxFood: 100
   hungerEnabled: 1
+  panel: {fileID: 0}
+  deadScreen: {fileID: 0}
 --- !u!114 &6544041037879700689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,8 +488,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c9059cec6f5ec49bbfb87b66ca7690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 9178022352370257092, guid: 278714300278ae948b55e69f36a429ed, type: 3}
-  movementScript: {fileID: 6789186919950649852}
+  menu: {fileID: 0}
+  movementScript: {fileID: 0}
+  sliders: {fileID: 0}
 --- !u!114 &2671075305692124070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,6 +511,9 @@ MonoBehaviour:
     mana: 0
     food: 0
     items: []
+    resolutionIndex: 0
+    fullscreen: 0
+    sound: 0
   playerManager: {fileID: 0}
   items: []
 --- !u!114 &699761289930402741
@@ -507,4 +529,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 0}
-  movement: {fileID: 6789186919950649852}
+  movement: {fileID: 0}
+  sliders: {fileID: 0}

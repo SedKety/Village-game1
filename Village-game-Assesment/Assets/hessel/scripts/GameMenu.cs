@@ -5,12 +5,17 @@ using UnityEngine;
 public class GameMenu : MonoBehaviour
 {
     public GameObject menu;
-    public Movement movementScript;
+    public CamScript camScript;
     public PlayerSliders sliders;
+
+    private void Start()
+    {
+        camScript = FindAnyObjectByType<CamScript>(); 
+    }
     public void BackToGame()
     {
         sliders.gameObject.SetActive(true);
-        movementScript.canILook = true;
+        camScript.canILook = true;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
         menu.SetActive(false);

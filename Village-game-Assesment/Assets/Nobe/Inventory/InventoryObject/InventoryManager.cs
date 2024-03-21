@@ -14,7 +14,7 @@ public class InventoryManager : MonoBehaviour
 
     public GameObject inventory;
 
-    public Movement movementScript;
+    public CamScript camScript;
 
     public GameObject playerSliders;
 
@@ -25,7 +25,7 @@ public class InventoryManager : MonoBehaviour
         {
             inventoryManager = this;
         }
-        movementScript = GameObject.FindAnyObjectByType<Movement>();
+        camScript = GameObject.FindAnyObjectByType<CamScript>();
     }
     public void Update()
     {
@@ -69,14 +69,14 @@ public class InventoryManager : MonoBehaviour
 
     public void OpenInventory()
     {
-        movementScript.canILook = false;
+        camScript.canILook = false;
         playerSliders.SetActive(false);
 
     }
 
     public void CloseInventory()
     {
-        movementScript.canILook = true;
+        camScript.canILook = true;
         playerSliders.SetActive(true);
     }
 

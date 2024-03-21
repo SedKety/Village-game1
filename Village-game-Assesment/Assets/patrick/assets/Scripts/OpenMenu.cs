@@ -6,11 +6,11 @@ using UnityEngine;
 public class OpenMenu : MonoBehaviour
 {
     public GameObject menu;
-    public Movement movement;
+    public CamScript camScript;
     public PlayerSliders sliders;
     private void Start()
     {
-        movement = FindAnyObjectByType<Movement>();
+        camScript = FindAnyObjectByType<CamScript>();
         sliders = FindAnyObjectByType<PlayerSliders>();
     }
     void Update()
@@ -20,7 +20,7 @@ public class OpenMenu : MonoBehaviour
             sliders.gameObject.SetActive(false);
             menu.SetActive(true);
             Time.timeScale = 0f;
-            movement.canILook = false;
+            camScript.canILook = false;
             Cursor.lockState = CursorLockMode.None;
         }
     }
