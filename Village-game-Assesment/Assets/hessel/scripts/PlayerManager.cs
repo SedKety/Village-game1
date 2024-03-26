@@ -49,7 +49,7 @@ public class PlayerManager : MonoBehaviour
     public void DoDamage(int damage)
     {
         health -= damage;
-        if (health < 0)
+        if (health <= 0)
         {
             deadScreen.SetActive(true);
             FindAnyObjectByType<CamScript>().canILook = false;
@@ -62,11 +62,19 @@ public class PlayerManager : MonoBehaviour
     {
         while (hungerEnabled)
         {
-            int canDecreaseFood = Random.Range(0, 2);
-            if (canDecreaseFood == 0)
+            if (food >= 0)
             {
-                food -= 1;
-                yield return new WaitForSeconds(5f);
+                int canDecreaseFood = Random.Range(0, 2);
+                if (canDecreaseFood == 0)
+                {
+                    food -= 1;
+                    yield return new WaitForSeconds(5f);
+                }
+            }
+            else
+            {
+                health -= 1;
+                yield return new WaitForSeconds(1f);
             }
         }
     }
@@ -88,13 +96,21 @@ public class PlayerManager : MonoBehaviour
 
     public IEnumerator HealthRecovery()
     {
-        if (health <= 99)
+        if (food >= 0)
         {
-            health += hpRecoveryAmount;
-            yield return new WaitForSeconds(1f);
-            StartCoroutine(HealthRecovery());
+            if (health <= 99)
+            {
+                health += hpRecoveryAmount;
+                yield return new WaitForSeconds(1f);
+                StartCoroutine(HealthRecovery());
+            }
+            else if (health == 100)
+            {
+                yield return new WaitForSeconds(1f);
+                StartCoroutine(HealthRecovery());
+            }
         }
-        else if (health == 100)
+        else
         {
             yield return new WaitForSeconds(1f);
             StartCoroutine(HealthRecovery());

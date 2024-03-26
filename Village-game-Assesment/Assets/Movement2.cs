@@ -23,12 +23,11 @@ public class Movement2 : MonoBehaviour
         Time.timeScale = 1f;
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
-
     }
     private void FixedUpdate()
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-        rb.AddForce(moveDirection.normalized * moveSpeed * 10f * Time.deltaTime, ForceMode.Force);
+        rb.AddForce(moveDirection.normalized * moveSpeed * 100f * Time.deltaTime, ForceMode.Force);
     }
     private void Update()
     {
@@ -43,9 +42,8 @@ public class Movement2 : MonoBehaviour
     }
     private void MyInput()
     { 
-
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
 
         // when to jump
         if (Input.GetButton("Jump") && onGround)
@@ -54,7 +52,7 @@ public class Movement2 : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
             rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-           onGround = false;
+            onGround = false;
         }
     }
 
