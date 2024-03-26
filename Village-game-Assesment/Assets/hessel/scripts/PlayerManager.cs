@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -17,7 +18,6 @@ public class PlayerManager : MonoBehaviour
 
     public bool hungerEnabled;
 
-    public GameObject panel;
     public GameObject deadScreen;
     // Start is called before the first frame update
     void Start()
@@ -52,7 +52,8 @@ public class PlayerManager : MonoBehaviour
         if (health < 0)
         {
             deadScreen.SetActive(true);
-            panel.SetActive(true);
+            FindAnyObjectByType<CamScript>().canILook = false;
+            Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
         }
     }

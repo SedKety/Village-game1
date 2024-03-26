@@ -54,7 +54,7 @@ public class SaveData : MonoBehaviour
             sw.Write(json);
         }
     }
-    PlayerData Load()
+    public PlayerData Load()
     {
         string json = string.Empty;
         PlayerData data;
