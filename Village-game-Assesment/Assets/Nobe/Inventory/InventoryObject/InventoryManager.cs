@@ -9,8 +9,8 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager inventoryManager;
     public List<Item> items;
 
-    [SerializeField] Transform itemContent;
-    [SerializeField] GameObject inventoryItem;
+    public Transform itemContent;
+    public GameObject inventoryItem;
 
     public GameObject inventory;
 
@@ -19,12 +19,9 @@ public class InventoryManager : MonoBehaviour
     public GameObject playerSliders;
 
     public TextMeshProUGUI inventoryFull;
-    private void Awake()
+    public void Start()
     {
-        if(inventoryManager == null)
-        {
-            inventoryManager = this;
-        }
+        inventoryManager = this;
         camScript = GameObject.FindAnyObjectByType<CamScript>();
     }
     public void Update()
@@ -32,13 +29,6 @@ public class InventoryManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             OpenInventory();
-            inventory.SetActive(true);
-            ListItems();
-        }
-
-        if (inventoryFull.gameObject.activeSelf)
-        {
-            Invoke("inventoryFullTextOff", 1f);
         }
     }
 
@@ -69,20 +59,15 @@ public class InventoryManager : MonoBehaviour
 
     public void OpenInventory()
     {
+        inventory.SetActive(true);
         camScript.canILook = false;
         playerSliders.SetActive(false);
-
+        ListItems();
     }
 
     public void CloseInventory()
     {
         camScript.canILook = true;
         playerSliders.SetActive(true);
-    }
-
-
-    void inventoryFullTextOff()
-    {
-        inventoryFull.gameObject.SetActive(false);
     }
 }

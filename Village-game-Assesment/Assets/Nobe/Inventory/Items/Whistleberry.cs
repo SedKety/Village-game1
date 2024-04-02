@@ -7,9 +7,9 @@ public class Whistleberry : ConsumableItem
 {
     public static bool hasPlayed;
     public GameObject whistle;
-    public override void ConsumeItem()
+    public override void OnItemUse()
     {
-        base.ConsumeItem();
+        base.OnItemUse();
         if (!hasPlayed)
         {
             Instantiate(whistle);

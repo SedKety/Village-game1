@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public enum ItemType { material, consumable}
-[CreateAssetMenu(menuName = "Items/Material")]
-public class Item : ScriptableObject
+using UnityEngine.UI;
+public enum ItemType { material, consumable }
+public abstract class Item : ScriptableObject
 {
     public int id;
     public Sprite itemSprite;
@@ -12,4 +11,8 @@ public class Item : ScriptableObject
     public string itemDescription;
     public GameObject itemPrefab;
     public ItemType type;
+
+
+    public abstract void OnItemUse();
+    public abstract void EditSliders(Slider slider1, Slider slider2);
 }

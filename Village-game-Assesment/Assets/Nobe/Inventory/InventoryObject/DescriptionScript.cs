@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,22 +20,11 @@ public class DescriptionScript : MonoBehaviour
     {
         if (itemToDisplay != null)
         {
-            ConsumableItem consumable = itemToDisplay as ConsumableItem;
-
-            if (consumable != null)
+            if (itemToDisplay.type == ItemType.consumable)
             {
-                // If itemToDisplay is a ConsumableItem
                 hpSlider.gameObject.SetActive(true);
-                hpSlider.value = consumable.healthToHeal;
-
                 foodSlider.gameObject.SetActive(true);
-                foodSlider.value = consumable.foodToReplenish;
-            }
-            else
-            {
-                // If itemToDisplay is not a ConsumableItem
-                hpSlider.gameObject.SetActive(false);
-                foodSlider.gameObject.SetActive(false);
+                itemToDisplay.EditSliders(hpSlider, foodSlider);
             }
 
             // Common operations for both cases

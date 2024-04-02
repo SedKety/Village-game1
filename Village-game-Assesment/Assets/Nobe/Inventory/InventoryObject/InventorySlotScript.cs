@@ -8,7 +8,6 @@ using Unity.VisualScripting;
 public class InventorySlotScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public Item item;
-    public ConsumableItem consumableItem;
     public Button removeButton;
     public Button consumeButton;
 
@@ -18,7 +17,6 @@ public class InventorySlotScript : MonoBehaviour, IPointerEnterHandler, IPointer
     {
         if (item.type == ItemType.consumable)
         {
-            consumableItem = (ConsumableItem)item;
             consumeButton.gameObject.SetActive(true); 
         }
     }
@@ -47,7 +45,7 @@ public class InventorySlotScript : MonoBehaviour, IPointerEnterHandler, IPointer
 
     public void ConsumableButton()
     {
-        consumableItem.ConsumeItem();
+        item.OnItemUse();
         InventoryManager inventory = FindAnyObjectByType<InventoryManager>();
         inventory.OnItemRemove(item);
         inventory.ListItems();

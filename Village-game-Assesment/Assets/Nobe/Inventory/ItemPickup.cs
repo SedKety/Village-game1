@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemPickup : MonoBehaviour, IInteractable
 {
     public Item thisItem;
+    public int maxItemSlots = 29;
 
     public void Start()
     {
@@ -20,13 +21,13 @@ public class ItemPickup : MonoBehaviour, IInteractable
     public void Iinteractable()
     {
         InventoryManager inventoryManager = FindAnyObjectByType<InventoryManager>();
-        if(inventoryManager.items.Count <= 29 )
+        if(inventoryManager.items.Count <= maxItemSlots)
         {
             InventoryManager.inventoryManager.OnItemAdd(thisItem);
             inventoryManager.ListItems();
             Destroy(gameObject);
         }
-        else if(inventoryManager.items.Count >= 29)
+        else if(inventoryManager.items.Count >= maxItemSlots)
         {
             inventoryManager.inventoryFull.gameObject.SetActive(true);
         }

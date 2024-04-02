@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(menuName = "Items/Consumable")]
 public class ConsumableItem : Item
@@ -9,12 +10,17 @@ public class ConsumableItem : Item
     public int healthToHeal;
 
 
-    public virtual void ConsumeItem()
+    public override void OnItemUse()
     {
         PlayerManager player = FindAnyObjectByType<PlayerManager>();
         InventoryManager inventory = FindAnyObjectByType<InventoryManager>();
 
         player.health += healthToHeal;
         player.food += foodToReplenish;
+    }
+    public override void EditSliders(Slider healthslider, Slider foodSlider)
+    {
+        healthslider.value = healthToHeal;
+        foodSlider.value = foodToReplenish;
     }
 }

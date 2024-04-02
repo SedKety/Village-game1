@@ -8,8 +8,6 @@ public class ResourceNodeSpwanerScript : MonoBehaviour
     public Collider spawnCollider;
     public int spawnCount;
     public Transform resourceNodeManager;
-
-    public LayerMask spawnLayerMask;
     public void Start()
     {
         resourceNodeManager = GameObject.FindGameObjectWithTag("ResourceNodeManager").transform;
@@ -24,11 +22,14 @@ public class ResourceNodeSpwanerScript : MonoBehaviour
             Vector3 randomSpawnPoint = GetRandomPointInCollider(spawnCollider.bounds);
             RaycastHit hit;
 
-            if (Physics.Raycast(randomSpawnPoint, Vector3.down, out hit, 100, spawnLayerMask))
+            if (Physics.Raycast(randomSpawnPoint, Vector3.down, out hit, 100))
             {
-                randomSpawnPoint.y = hit.point.y;
-                GameObject spawnedNode = Instantiate(resourceNodeToSpawn, randomSpawnPoint, Quaternion.identity, resourceNodeManager);
-                spawnedNode.transform.up = hit.normal; 
+                if (hit.collider.CompareTag("Ground"))
+                {
+                    randomSpawnPoint.y = hit.point.y;
+                    GameObject spawnedNode = Instantiate(resourceNodeToSpawn, randomSpawnPoint, Quaternion.identity, resourceNodeManager);
+                    spawnedNode.transform.up = hit.normal;
+                }
             }
         }
     }
