@@ -68,7 +68,7 @@ public class PlayerManager : MonoBehaviour
                 if (canDecreaseFood == 0)
                 {
                     food -= 1;
-                    yield return new WaitForSeconds(5f);
+                    yield return new WaitForSeconds(1f);
                 }
             }
             else

@@ -27,7 +27,7 @@ public class Movement2 : MonoBehaviour
     private void FixedUpdate()
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-        rb.AddForce(moveDirection.normalized * moveSpeed * 100f * Time.deltaTime, ForceMode.Force);
+        rb.AddForce(moveDirection.normalized * moveSpeed * 1000f * Time.deltaTime, ForceMode.Force);
     }
     private void Update()
     {
