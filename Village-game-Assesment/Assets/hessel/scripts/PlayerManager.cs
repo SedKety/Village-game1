@@ -5,30 +5,28 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    [Header("Healh")]
     public float health;
     public float maxHealth;
     public float hpRecoveryAmount;
-
+    [Header("Mana")]
     public float mana;
     public float maxMana;
     public float manaRecoveryAmount;
-
+    [Header("Food")]
     public float food;
     public float maxFood;
-
-    public bool hungerEnabled;
-
+    public float foodDropAmount;
+    [Header("Dead")]
     public GameObject deadScreen;
-    // Start is called before the first frame update
+
     void Start()
     {
 
         health = 100;
         mana = 100;
         food = 100;
-        StartCoroutine(Hunger());
-        StartCoroutine(HealthRecovery());
-        StartCoroutine(ManaRecovery());
+
     }
     private void Update()
     {
@@ -44,6 +42,9 @@ public class PlayerManager : MonoBehaviour
         {
             food = maxFood;
         }
+        HealthRegeneration();
+        ManaRegeneration();
+        FoodRegeneration();
     }
 
     public void DoDamage(int damage)
@@ -57,63 +58,50 @@ public class PlayerManager : MonoBehaviour
             Time.timeScale = 0;
         }
     }
-
-    public IEnumerator Hunger()
-    {
-        while (hungerEnabled)
-        {
-            if (food >= 0)
-            {
-                int canDecreaseFood = Random.Range(0, 2);
-                if (canDecreaseFood == 0)
-                {
-                    food -= 1;
-                    yield return new WaitForSeconds(1f);
-                }
-            }
-            else
-            {
-                health -= 1;
-                yield return new WaitForSeconds(1f);
-            }
-        }
-    }
-
-    public IEnumerator ManaRecovery()
-    {
-        if (mana <= 99)
-        {
-            mana += manaRecoveryAmount;
-            yield return new WaitForSeconds(1f);
-            StartCoroutine(ManaRecovery());
-        }
-        else if (mana == 100)
-        {
-            yield return new WaitForSeconds(1f);
-            StartCoroutine(ManaRecovery());
-        }
-    }
-
-    public IEnumerator HealthRecovery()
+    public void HealthRegeneration()
     {
         if (food >= 0)
         {
             if (health <= 99)
             {
-                health += hpRecoveryAmount;
-                yield return new WaitForSeconds(1f);
-                StartCoroutine(HealthRecovery());
+                health += hpRecoveryAmount * Time.deltaTime;
             }
-            else if (health == 100)
+            else
             {
-                yield return new WaitForSeconds(1f);
-                StartCoroutine(HealthRecovery());
+                health = maxHealth;
+            }
+
+        }
+    }
+    public void ManaRegeneration()
+    {
+        if (mana <= 99)
+        {
+            mana += manaRecoveryAmount * Time.deltaTime;
+        }
+        else
+        {
+            mana = maxMana;
+        }
+    }
+    public void FoodRegeneration()
+    {
+        if (food >= 0)
+        {
+            int canDecreaseFood = Random.Range(0, 2);
+            if (canDecreaseFood == 0)
+            {
+                food -= foodDropAmount * Time.deltaTime;
             }
         }
         else
         {
-            yield return new WaitForSeconds(1f);
-            StartCoroutine(HealthRecovery());
+            health -= 1 * Time.deltaTime;
+        }
+        if (food == 100)
+        {
+            food = maxFood;
         }
     }
+
 }
