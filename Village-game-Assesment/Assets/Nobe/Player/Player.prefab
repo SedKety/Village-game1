@@ -111,7 +111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7499675155075001748}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.06540316, y: 0, z: 0, w: 0.99785894}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -420,12 +420,12 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   hpRecoveryAmount: 0.5
-  mana: 100
+  mana: 0
   maxMana: 100
   manaRecoveryAmount: 1
   food: 100
   maxFood: 100
-  hungerEnabled: 1
+  foodDropAmount: 0
   deadScreen: {fileID: 0}
 --- !u!114 &6544041037879700689
 MonoBehaviour:

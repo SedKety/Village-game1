@@ -67,6 +67,7 @@ public class InventoryManager : MonoBehaviour
 
     public void CloseInventory()
     {
+        inventory.SetActive(false);
         camScript.canILook = true;
         playerSliders.SetActive(true);
     }

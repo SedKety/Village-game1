@@ -18,11 +18,14 @@ public class Movement2 : MonoBehaviour
     Vector3 moveDirection;
     Rigidbody rb;
 
+    //Nobe: voor animaties.
+    public Animator animator;
     private void Start()
     {
         Time.timeScale = 1f;
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        animator = GetComponent<Animator>();
     }
     private void FixedUpdate()
     {
@@ -44,6 +47,16 @@ public class Movement2 : MonoBehaviour
     { 
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
+
+        //Nobe: voor animaties
+        if (moveDirection != Vector3.zero)
+        { 
+            animator.SetBool("IsMoving", true); 
+        }
+        else
+        {
+            animator.SetBool("IsMoving", false);
+        }
 
         // when to jump
         if (Input.GetButton("Jump") && onGround)

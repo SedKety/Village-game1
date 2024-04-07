@@ -13,7 +13,6 @@ public class ConsumableItem : Item
     public override void OnItemUse()
     {
         PlayerManager player = FindAnyObjectByType<PlayerManager>();
-        InventoryManager inventory = FindAnyObjectByType<InventoryManager>();
 
         player.health += healthToHeal;
         player.food += foodToReplenish;

@@ -17,20 +17,19 @@ public class InventorySlotScript : MonoBehaviour, IPointerEnterHandler, IPointer
     {
         if (item.type == ItemType.consumable)
         {
-            consumeButton.gameObject.SetActive(true); 
+            consumeButton.gameObject.SetActive(true);
         }
     }
     public void RemoveItem()
     {
         InventoryManager.inventoryManager.OnItemRemove(item);
-        Instantiate(item.itemPrefab, GameObject.FindGameObjectWithTag("Player").GetComponent<Shoot>().fireBallShotPoint.position, Quaternion.identity);  
+        Instantiate(item.itemPrefab, GameObject.FindGameObjectWithTag("DropSpot").transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
     public void AddItem(Item newItem)
     {
         item = newItem;
     }
-
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
         descriptionScript = FindAnyObjectByType<DescriptionScript>();
@@ -41,8 +40,6 @@ public class InventorySlotScript : MonoBehaviour, IPointerEnterHandler, IPointer
         descriptionScript = FindAnyObjectByType<DescriptionScript>();
         descriptionScript.itemToDisplay = null;
     }
-
-
     public void ConsumableButton()
     {
         item.OnItemUse();

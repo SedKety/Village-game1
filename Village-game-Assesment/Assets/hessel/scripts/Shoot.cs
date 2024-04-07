@@ -11,7 +11,15 @@ public class Shoot : MonoBehaviour
     public PlayerManager playerManager;
 
     public int manaCost;
-    void Fire()
+
+    public bool recentlyShot;
+    public Animator animator;
+
+    private void Start()
+    {
+         animator = FindObjectOfType<Animator>();
+    }
+   public  void Fire()
     {
         if (playerManager.mana >= manaCost)
         {
@@ -23,7 +31,22 @@ public class Shoot : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown("Fire2"))
-            Fire();
+        {
+            StartCoroutine(ShootFireball());
+        }
+    }
+
+
+
+    public IEnumerator ShootFireball()
+    {
+        if(recentlyShot == false)
+        {
+            animator.SetBool("Fireball", true);
+            recentlyShot = true;
+            yield return new WaitForSeconds(1);
+            recentlyShot = false;
+        }
     }
 
 }

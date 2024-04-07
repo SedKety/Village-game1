@@ -11,8 +11,6 @@ public abstract class Item : ScriptableObject
     public string itemDescription;
     public GameObject itemPrefab;
     public ItemType type;
-
-
     public abstract void OnItemUse();
     public abstract void EditSliders(Slider slider1, Slider slider2);
 }
