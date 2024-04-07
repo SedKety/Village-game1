@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5099293597496014934}
   m_Layer: 6
   m_Name: DropSpot
-  m_TagString: Untagged
+  m_TagString: DropSpot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -293,17 +293,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a517a715ef44f9a479c911057fa54061,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 476.5317
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a517a715ef44f9a479c911057fa54061,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 78.177765
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a517a715ef44f9a479c911057fa54061,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1075.6382
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a517a715ef44f9a479c911057fa54061,
         type: 3}
@@ -2675,7 +2675,7 @@ MonoBehaviour:
     resolutionIndex: 0
     fullscreen: 0
     sound: 0
-  playerManager: {fileID: 0}
+  playerManager: {fileID: 9214548732863000688}
   items: []
 --- !u!114 &2133364898525823941
 MonoBehaviour:

@@ -238,7 +238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyDmg: 5
   enemyHp: 1
-  navMeshAgent: {fileID: 0}
+  navMeshAgent: {fileID: 7242053993103846914}
   itemToDrop:
   - {fileID: 6624099222994009695, guid: 727104c4061255048a823c633056252f, type: 3}
   - {fileID: 1872954046833510746, guid: 37b42e6c16466fc4696b2ddfc00e1fd6, type: 3}
@@ -261,6 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisItem: {fileID: 11400000, guid: 0b30a02b7e914af44b2a276a8b721e2f, type: 2}
+  maxItemSlots: 29
 --- !u!4 &3397657284369997221 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: aaed4ddc9429b14438d9496d3840f925,
