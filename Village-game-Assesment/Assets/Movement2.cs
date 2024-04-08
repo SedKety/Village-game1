@@ -8,8 +8,7 @@ public class Movement2 : MonoBehaviour
     public float moveSpeed;
     public float groundDrag;
     public float jumpForce;
-    [HideInInspector] public float walkSpeed;
-    [HideInInspector] public float sprintSpeed;
+   
     [Header("Ground Check")]
     public bool onGround;
     public Transform orientation;

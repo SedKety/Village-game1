@@ -4251,10 +4251,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7985649321242842780, guid: d5e49d4ca73ec94499bf8240ad18931e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5271343246489920222, guid: d5e49d4ca73ec94499bf8240ad18931e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1844783527}
   m_SourcePrefab: {fileID: 100100000, guid: d5e49d4ca73ec94499bf8240ad18931e, type: 3}
 --- !u!1001 &420050886
 PrefabInstance:
@@ -10488,6 +10493,44 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 727104c4061255048a823c633056252f, type: 3}
+--- !u!1 &1844783513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5271343246489920222, guid: d5e49d4ca73ec94499bf8240ad18931e,
+    type: 3}
+  m_PrefabInstance: {fileID: 416566846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1844783520 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9214548732863000688, guid: d5e49d4ca73ec94499bf8240ad18931e,
+    type: 3}
+  m_PrefabInstance: {fileID: 416566846}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844783513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5032248eba42dc04c9349f9a58bee50e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1844783527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844783513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f27fa19281fbd841987457b3d817b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireBallSpeed: 25
+  fireBall: {fileID: 7062057887187214215, guid: 746f03d3d5971b247ac5faec0763d5fe,
+    type: 3}
+  fireBallShotPoint: {fileID: 1912796509}
+  playerManager: {fileID: 1844783520}
+  manaCost: 5
+  recentlyShot: 0
+  animator: {fileID: 0}
 --- !u!1001 &1892619889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10592,6 +10635,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7295400849836343279, guid: 8f112bf063a4ece448c7894137a7ff65,
     type: 3}
   m_PrefabInstance: {fileID: 1892619889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1912796509 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6653611469031968365, guid: d5e49d4ca73ec94499bf8240ad18931e,
+    type: 3}
+  m_PrefabInstance: {fileID: 416566846}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1957771817
 PrefabInstance:

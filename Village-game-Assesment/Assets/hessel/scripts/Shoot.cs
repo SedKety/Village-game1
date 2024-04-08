@@ -15,6 +15,8 @@ public class Shoot : MonoBehaviour
     public bool recentlyShot;
     public Animator animator;
 
+    public Camera cam;
+
     private void Start()
     {
          animator = FindObjectOfType<Animator>();
@@ -25,7 +27,7 @@ public class Shoot : MonoBehaviour
         {
             playerManager.mana -= manaCost;
             Rigidbody bulletClone = Instantiate(fireBall, fireBallShotPoint.position, fireBallShotPoint.rotation).GetComponent<Rigidbody>();
-            bulletClone.velocity = fireBallShotPoint.forward * fireBallSpeed;
+            bulletClone.velocity = cam.transform.forward * fireBallSpeed;
         }
     }
     void Update()
