@@ -23,6 +23,7 @@ public class SaveData : MonoBehaviour
             player.GetComponent<LoadPlayerData>().Initialize();
         }
         FindAnyObjectByType<SoundChanger>().Initialize();
+        //FindAnyObjectByType<MouseSensitivityChanger>().Initialize();
         if (!playerSave)
         {
             FindAnyObjectByType<ResManerger>().Initialize();
@@ -44,6 +45,7 @@ public class SaveData : MonoBehaviour
             playerData.mana = player.GetComponent<PlayerManager>().mana;
             playerData.health = player.GetComponent<PlayerManager>().health;
             playerData.items = FindAnyObjectByType<InventoryManager>().items.ToArray();
+            playerData.mouseSensitivity = FindAnyObjectByType<CamScript>().mouseSensitivity;
         }
 
         string json = JsonUtility.ToJson(playerData);

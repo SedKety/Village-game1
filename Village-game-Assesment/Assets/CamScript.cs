@@ -22,8 +22,8 @@ public class CamScript : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
 
-            transform.Rotate(Input.GetAxisRaw("Mouse X") * mouseSensitivity * Vector3.up);
-            verticalLookRotation -= Input.GetAxisRaw("Mouse Y") * mouseSensitivity;
+            transform.Rotate(Input.GetAxis("Mouse X") * mouseSensitivity * Vector3.up);
+            verticalLookRotation -= Input.GetAxis("Mouse Y") * mouseSensitivity;
             verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90f, 90f);
             cameraHolder.localEulerAngles = new Vector3(verticalLookRotation, 0, 0);
         }

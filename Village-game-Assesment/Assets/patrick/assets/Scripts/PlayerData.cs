@@ -14,4 +14,5 @@ public class PlayerData
     public int resolutionIndex;
     public bool fullscreen;
     public float sound;
+    public float mouseSensitivity = 5;
 }

@@ -1248,7 +1248,7 @@ MonoBehaviour:
   manaRecoveryAmount: 0
   food: 100
   maxFood: 100
-  hungerEnabled: 0
+  foodDropAmount: 0
   deadScreen: {fileID: 0}
 --- !u!54 &948840405
 Rigidbody:
@@ -2736,18 +2736,33 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8174015873407274833, guid: aa0bde0f4d27dcf479108e8b27b0eb75,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.60224
+      objectReference: {fileID: 0}
+    - target: {fileID: 8174015873407274833, guid: aa0bde0f4d27dcf479108e8b27b0eb75,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.60224
+      objectReference: {fileID: 0}
+    - target: {fileID: 8174015873407274833, guid: aa0bde0f4d27dcf479108e8b27b0eb75,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.60224
+      objectReference: {fileID: 0}
+    - target: {fileID: 8174015873407274833, guid: aa0bde0f4d27dcf479108e8b27b0eb75,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 269.55026
+      value: 269.48
       objectReference: {fileID: 0}
     - target: {fileID: 8174015873407274833, guid: aa0bde0f4d27dcf479108e8b27b0eb75,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.42
       objectReference: {fileID: 0}
     - target: {fileID: 8174015873407274833, guid: aa0bde0f4d27dcf479108e8b27b0eb75,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -438.7742
+      value: -438.73
       objectReference: {fileID: 0}
     - target: {fileID: 8174015873407274833, guid: aa0bde0f4d27dcf479108e8b27b0eb75,
         type: 3}

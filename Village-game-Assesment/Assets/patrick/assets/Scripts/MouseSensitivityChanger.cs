@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -11,12 +12,24 @@ public class MouseSensitivityChanger : MonoBehaviour
     {
         input = GetComponent<TMP_InputField>();
     }
+    public void Initialize()
+    {
+        input.text = FindAnyObjectByType<SaveData>().playerData.mouseSensitivity.ToString();
+    }
     public void ValueChanged()
     {
         if (input.text.Length > 0)
         {
-            float sens = float.Parse(input.text);
-            FindAnyObjectByType<CamScript>().mouseSensitivity = sens;
+            try
+            {
+                float sens = float.Parse(input.text);
+                FindAnyObjectByType<CamScript>().mouseSensitivity = sens;
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e);
+                input.text = ("Invalid Input");
+            }
         }
     }
 }

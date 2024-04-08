@@ -22,6 +22,7 @@ public class LoadPlayerData : MonoBehaviour
             playerManager.health = playerData.health;
             playerManager.mana = playerData.mana;
             playerManager.food = playerData.food;
+            GetComponent<CamScript>().mouseSensitivity = playerData.mouseSensitivity;
             foreach(Item item in playerData.items)
             {
                 FindAnyObjectByType<InventoryManager>().OnItemAdd(item);

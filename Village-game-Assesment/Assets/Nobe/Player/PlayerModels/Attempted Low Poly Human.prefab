@@ -2673,6 +2673,7 @@ MonoBehaviour:
     resolutionIndex: 0
     fullscreen: 0
     sound: 0
+    mouseSensitivity: 0
   playerManager: {fileID: 9214548732863000688}
   items: []
 --- !u!114 &2133364898525823941
@@ -2689,7 +2690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraHolder: {fileID: 1033758656331171587}
   mainMenu: {fileID: 0}
-  mouseSensitivity: 50
+  mouseSensitivity: 10
   canILook: 1
 --- !u!114 &1703262222888336068
 MonoBehaviour:
