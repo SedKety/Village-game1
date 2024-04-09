@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cabc87f918d9540a7c48bbc97e5ec8, type: 3}
   m_Name: Pinda
   m_EditorClassIdentifier: 
-  id: 2
+  id: 1
   itemSprite: {fileID: 21300000, guid: a4e3cef7a08a7c04898fd5902dab1938, type: 3}
   itemName: Pinda
   itemDescription: Hmm. i wonder what happens if i press i while having one of these

@@ -24,7 +24,7 @@ public class WaterScript : MonoBehaviour
 
     public IEnumerator DmgPlayer (GameObject player) 
     {
-        player.GetComponent<PlayerManager>().health -= 10;
+        player.GetComponent<PlayerManager>().DoDamage(10);
         yield return new WaitForSeconds(2.5f);
         if(onWater)
         {

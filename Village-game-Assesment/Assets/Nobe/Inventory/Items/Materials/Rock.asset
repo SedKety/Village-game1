@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5488479954be35c469cf59aba7a202bd, type: 3}
   m_Name: Rock
   m_EditorClassIdentifier: 
-  id: 3
+  id: 8
   itemSprite: {fileID: 21300000, guid: f8718d8e3a2a91e4b82d142facdf3ccc, type: 3}
   itemName: Rock
   itemDescription: Its an piece of stone, surprised its not called an pebble

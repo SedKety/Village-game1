@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294c65ea26f6cb94895cc14ace2f6df7, type: 3}
   m_Name: Whistleberry
   m_EditorClassIdentifier: 
-  id: 9
+  id: 5
   itemSprite: {fileID: 21300000, guid: 15b5e7507239e44489f26bd10025b26a, type: 3}
   itemName: Whistleberry
   itemDescription: Yummy!

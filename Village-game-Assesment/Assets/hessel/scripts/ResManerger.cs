@@ -50,7 +50,10 @@ public class ResManerger : MonoBehaviour
 
     public void Initialize()
     {
-        SetResolution(saveData.playerData.resolutionIndex);
+        if (saveData.playerData.resolutionIndex != 0)
+        {
+            SetResolution(saveData.playerData.resolutionIndex);
+        }
         resolutionDropdown.value = saveData.playerData.resolutionIndex;
         resolutionDropdown.RefreshShownValue();
         currentRes = Screen.currentResolution.ToString();

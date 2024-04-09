@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5488479954be35c469cf59aba7a202bd, type: 3}
   m_Name: Sand
   m_EditorClassIdentifier: 
-  id: 5
+  id: 9
   itemSprite: {fileID: 21300000, guid: cd84ee835e21c0643a509c59f4144371, type: 3}
   itemName: Sand
   itemDescription: Its sand

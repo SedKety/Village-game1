@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3199716274525827214}
   m_Layer: 0
   m_Name: tree2
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeHealth: 15
-  itemToDrop: {fileID: 4692566644319850740, guid: 4d2f19f836761b249bdff5c4975c62d5,
+  itemToDrop: {fileID: 957843247651948752, guid: b0353c7ba0c14de4b8a24059fe5d10cc,
     type: 3}
   itemspawnpoint: {fileID: 1388963749133602504}
   enemyObject: {fileID: 2624815597163382559, guid: 9e1f8b830761a264f807686f00f6c917,

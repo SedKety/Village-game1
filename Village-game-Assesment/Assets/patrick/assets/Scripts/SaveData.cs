@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +14,6 @@ public class SaveData : MonoBehaviour
     public int autoSaveTimer = 25;
     public bool autoSaveEnabled;
     public bool playerSave;
-    public int max = 100;
     void Start()
     {
         path = Application.dataPath + Path.AltDirectorySeparatorChar + "SaveData.json";
@@ -38,22 +39,29 @@ public class SaveData : MonoBehaviour
     {
         if (playerSave)
         {
+            int i = 0;
             playerData.x = player.transform.position.x;
             playerData.y = player.transform.position.y;
             playerData.z = player.transform.position.z;
             playerData.food = player.GetComponent<PlayerManager>().food;
             playerData.mana = player.GetComponent<PlayerManager>().mana;
             playerData.health = player.GetComponent<PlayerManager>().health;
-            playerData.items = FindAnyObjectByType<InventoryManager>().items.ToArray();
+            foreach(Item item in FindAnyObjectByType<InventoryManager>().items)
+            {
+                int curID = item.id;
+                playerData.ids.Add(curID);
+            }
             playerData.mouseSensitivity = FindAnyObjectByType<CamScript>().mouseSensitivity;
         }
 
         string json = JsonUtility.ToJson(playerData);
+        byte[] bytes = Encoding.UTF8.GetBytes(json);
+        string encryptedJson = Convert.ToBase64String(bytes);
         Debug.Log(json);
 
         using (StreamWriter sw = new StreamWriter(path))
         {
-            sw.Write(json);
+            sw.Write(encryptedJson);
         }
     }
     public PlayerData Load()
@@ -67,7 +75,9 @@ public class SaveData : MonoBehaviour
             {
                 json = reader.ReadToEnd();
             }
-            data = JsonUtility.FromJson<PlayerData>(json);
+            byte[] decodedBytes = Convert.FromBase64String(json);
+            string decodedJson = Encoding.UTF8.GetString(decodedBytes);
+            data = JsonUtility.FromJson<PlayerData>(decodedJson);
         }
         else
         {
@@ -77,7 +87,7 @@ public class SaveData : MonoBehaviour
     }
     IEnumerator AutoSave()
     {
-        yield return new WaitForSeconds(25);
+        yield return new WaitForSeconds(autoSaveTimer);
         Save();
         Debug.Log("Autosaved");
         StartCoroutine(AutoSave());

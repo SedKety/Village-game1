@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cabc87f918d9540a7c48bbc97e5ec8, type: 3}
   m_Name: Apple
   m_EditorClassIdentifier: 
-  id: 3
+  id: 4
   itemSprite: {fileID: 0}
   itemName: Apple
   itemDescription: An apple a day keeps the doctor away

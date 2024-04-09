@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cabc87f918d9540a7c48bbc97e5ec8, type: 3}
   m_Name: Fried crab
   m_EditorClassIdentifier: 
-  id: 8
+  id: 2
   itemSprite: {fileID: 21300000, guid: 99ebe6b267bca0c45bb9769a75563118, type: 3}
   itemName: Fried Crab
   itemDescription: Hehe kreb, but fried
