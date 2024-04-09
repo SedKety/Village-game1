@@ -8,14 +8,14 @@ public class Movement2 : MonoBehaviour
     public float moveSpeed;
     public float groundDrag;
     public float jumpForce;
-   
+
     [Header("Ground Check")]
     public bool onGround;
     public Transform orientation;
-    float horizontalInput;
-    float verticalInput;
-    Vector3 moveDirection;
-    Rigidbody rb;
+    private float horizontalInput;
+    private float verticalInput;
+    private Vector3 moveDirection;
+    private Rigidbody rb;
 
     //Nobe: voor animaties.
     public Animator animator;
@@ -24,45 +24,40 @@ public class Movement2 : MonoBehaviour
         Time.timeScale = 1f;
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
-        animator = GetComponent<Animator>();
-    }
-    private void FixedUpdate()
-    {
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-        rb.AddForce(moveDirection.normalized * moveSpeed * 1000f * Time.deltaTime, ForceMode.Force);
+        //Nobe
+        animator = GetComponent<Animator>(); 
     }
     private void Update()
     {
         MyInput();
         SpeedControl();
 
-        // handle drag
+        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        rb.AddForce(moveDirection.normalized * moveSpeed * 1000f * Time.deltaTime, ForceMode.Force);
+
         if (onGround)
         {
             rb.drag = groundDrag;
         }
     }
-    private void MyInput()
-    { 
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
 
+    private void MyInput()
+    {
         //Nobe: voor animaties
         if (moveDirection != Vector3.zero)
-        { 
-            animator.SetBool("IsMoving", true); 
+        {
+            animator.SetBool("IsMoving", true);
         }
         else
         {
             animator.SetBool("IsMoving", false);
         }
 
-        // when to jump
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
+
         if (Input.GetButton("Jump") && onGround)
         {
-            // reset y velocity
-            rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-
             rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
             onGround = false;
         }
@@ -72,7 +67,6 @@ public class Movement2 : MonoBehaviour
     {
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-        // limit velocity if needed
         if (flatVel.magnitude > moveSpeed)
         {
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
@@ -84,5 +78,4 @@ public class Movement2 : MonoBehaviour
     {
         onGround = true;
     }
-    
 }

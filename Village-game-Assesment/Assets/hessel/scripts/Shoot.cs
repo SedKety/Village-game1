@@ -19,9 +19,10 @@ public class Shoot : MonoBehaviour
 
     private void Start()
     {
-         animator = FindObjectOfType<Animator>();
+        animator = FindObjectOfType<Animator>();
+        cam = Camera.main;
     }
-   public  void Fire()
+    public void Fire()
     {
         if (playerManager.mana >= manaCost)
         {
@@ -38,11 +39,10 @@ public class Shoot : MonoBehaviour
         }
     }
 
-
-
+    //Nobe animator
     public IEnumerator ShootFireball()
     {
-        if(recentlyShot == false)
+        if (recentlyShot == false)
         {
             animator.SetBool("Fireball", true);
             recentlyShot = true;
