@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Movement2 : MonoBehaviour
@@ -36,10 +37,15 @@ public class Movement2 : MonoBehaviour
         MyInput();
         SpeedControl();
 
-        // handle drag
-        if (onGround)
+        if (onGround == true)
         {
             rb.drag = groundDrag;
+        }
+
+        if (onGround == false)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, rb.velocity.z);
+            rb.drag = 0;
         }
     }
     private void MyInput()
@@ -47,7 +53,6 @@ public class Movement2 : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-        //Nobe: voor animaties
         if (moveDirection != Vector3.zero)
         { 
             animator.SetBool("IsMoving", true); 
@@ -57,10 +62,8 @@ public class Movement2 : MonoBehaviour
             animator.SetBool("IsMoving", false);
         }
 
-        // when to jump
         if (Input.GetButton("Jump") && onGround)
         {
-            // reset y velocity
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
             rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
@@ -84,5 +87,4 @@ public class Movement2 : MonoBehaviour
     {
         onGround = true;
     }
-    
 }
