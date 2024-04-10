@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Log
   m_EditorClassIdentifier: 
   id: 7
-  itemSprite: {fileID: 21300000, guid: 731a4921296a61d48afa6177528f9e94, type: 3}
+  itemSprite: {fileID: 21300000, guid: c1e08956636c5a249a98824fbfc1d47e, type: 3}
   itemName: Log
-  itemDescription: fuck you nobe no one likes you
+  itemDescription: log
   itemPrefab: {fileID: 957843247651948752, guid: b0353c7ba0c14de4b8a24059fe5d10cc,
     type: 3}
   type: 0

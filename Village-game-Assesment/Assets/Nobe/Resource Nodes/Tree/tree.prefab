@@ -226,11 +226,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694298407ecb8724cb1c2f117b4d9c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeHealth: 15
+  nodeHealth: 10
   itemToDrop: {fileID: 957843247651948752, guid: b0353c7ba0c14de4b8a24059fe5d10cc,
     type: 3}
   itemspawnpoint: {fileID: 5493455378011102478}
-  enemyObject: {fileID: 2624815597163382559, guid: 9e1f8b830761a264f807686f00f6c917,
+  enemyObject: {fileID: 6709380891973206443, guid: 4bfc883ffd2ec284f9acb012f3db52d4,
     type: 3}
 --- !u!1001 &8567334527580842170
 PrefabInstance:

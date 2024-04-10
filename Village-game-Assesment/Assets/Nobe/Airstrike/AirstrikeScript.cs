@@ -34,7 +34,7 @@ public class AirstrikeScript : MonoBehaviour
             {
                 foreach (Item item in InventoryManager.inventoryManager.items)
                 {
-                    if (item.id == 2)
+                    if (item.id == 1)
                     {
                         IniatiateBigBoomBoom();
                         InventoryManager.inventoryManager.OnItemRemove(item);
