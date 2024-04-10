@@ -6,16 +6,13 @@ public class ItemPickup : MonoBehaviour, IInteractable
 {
     public Item thisItem;
     public int maxItemSlots = 29;
-
+    public bool canDespawn;
     public void Start()
     {
-        StartCoroutine(despawnTimer());
-    }
-
-    public IEnumerator despawnTimer()
-    {
-        yield return new WaitForSeconds(50);
-        Destroy(gameObject);
+        if (canDespawn)
+        {
+            Destroy(gameObject, 50f);
+        }
     }
 
     public void Iinteractable()

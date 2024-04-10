@@ -1,37 +1,52 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
-public class BrainbossButton : MonoBehaviour, IInteractable
+public class BrainbossButton : MonoBehaviour
 {
-    public TextMeshPro brainsNeededText;
-    public int brainsNeeded;
-
-    public GameObject brainboss;
-
-    public void Start()
-    {
-        brainsNeeded = 6;
-    }
-    public void Iinteractable()
+    public TMP_Text[] neededText;
+    public int[] offered;
+    public int[] needed;
+    public GameObject repaired;
+    public GameObject old;
+    public List<int> materialid = new List<int>();
+    public List<int> materials = new List<int>();
+    public string[] material;
+    public void Button()
     {
         var inventory = FindAnyObjectByType<InventoryManager>();
         foreach(var item in inventory.GetComponent<InventoryManager>().items)
         {
-            if(item.id == 6)
+            if(materialid.Contains(item.id))
             {
+                int curIndex = materials.IndexOf(item.id);
                 inventory.GetComponent<InventoryManager>().OnItemRemove(item);
                 inventory.GetComponent<InventoryManager>().ListItems();
-                brainsNeeded -= 1;
-                brainsNeededText.text = "6/ " + brainsNeeded;
-                if(brainsNeeded <= 0)
+                offered[curIndex] += 1;
+                neededText[curIndex].text = offered[curIndex].ToString() + "/" + needed[curIndex].ToString() + " " + material[curIndex];
+                if (offered[curIndex] >= needed[curIndex])
                 {
-                    brainboss.SetActive(true);
-                    brainsNeeded = 6;
+                    materialid.RemoveAt(curIndex);
+                }
+                if (materialid.Count == 0)
+                {
+                    Repair();
                 }
                 break;
             }
         }
+    }
+
+    void Repair()
+    {
+        repaired.SetActive(true);
+        Destroy(old);
+    }
+
+    void Update()
+    {
+
     }
 }

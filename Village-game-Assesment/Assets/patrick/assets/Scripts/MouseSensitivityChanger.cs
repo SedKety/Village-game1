@@ -7,6 +7,7 @@ using UnityEngine;
 public class MouseSensitivityChanger : MonoBehaviour
 {
     public TMP_InputField input;
+    private string currentSens;
 
     private void Start()
     {
@@ -28,8 +29,12 @@ public class MouseSensitivityChanger : MonoBehaviour
             catch (Exception e)
             {
                 Debug.Log(e);
-                input.text = ("Invalid Input");
+                input.text = currentSens;
             }
         }
+    }
+    public void OnSelect()
+    {
+        currentSens = input.text;
     }
 }

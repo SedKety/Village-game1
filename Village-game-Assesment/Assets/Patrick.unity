@@ -264,6 +264,74 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a36e50f2bdffb146894355000580684, type: 3}
+--- !u!1001 &499813860
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2145805872398059835, guid: 40d1dfe3f6c5bea4a9a50398ead99acb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 575.78564
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145805872398059835, guid: 40d1dfe3f6c5bea4a9a50398ead99acb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 63.2695
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145805872398059835, guid: 40d1dfe3f6c5bea4a9a50398ead99acb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1056.2047
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145805872398059835, guid: 40d1dfe3f6c5bea4a9a50398ead99acb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145805872398059835, guid: 40d1dfe3f6c5bea4a9a50398ead99acb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145805872398059835, guid: 40d1dfe3f6c5bea4a9a50398ead99acb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145805872398059835, guid: 40d1dfe3f6c5bea4a9a50398ead99acb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145805872398059835, guid: 40d1dfe3f6c5bea4a9a50398ead99acb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145805872398059835, guid: 40d1dfe3f6c5bea4a9a50398ead99acb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145805872398059835, guid: 40d1dfe3f6c5bea4a9a50398ead99acb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7006753801920926570, guid: 40d1dfe3f6c5bea4a9a50398ead99acb,
+        type: 3}
+      propertyPath: m_Name
+      value: WinCondition
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 40d1dfe3f6c5bea4a9a50398ead99acb, type: 3}
 --- !u!1 &527485713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,15 +1109,15 @@ MonoBehaviour:
     health: 0
     mana: 0
     food: 0
-    items: []
+    ids: 
     resolutionIndex: 0
     fullscreen: 0
     sound: 0
+    mouseSensitivity: 5
   player: {fileID: 0}
   autoSaveTimer: 25
   autoSaveEnabled: 0
   playerSave: 0
-  max: 100
 --- !u!114 &809637578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1296,15 +1364,15 @@ MonoBehaviour:
     health: 0
     mana: 0
     food: 0
-    items: []
+    ids: 
     resolutionIndex: 0
     fullscreen: 0
     sound: 0
+    mouseSensitivity: 5
   player: {fileID: 0}
   autoSaveTimer: 25
   autoSaveEnabled: 0
   playerSave: 0
-  max: 100
 --- !u!114 &948840407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1324,12 +1392,14 @@ MonoBehaviour:
     health: 0
     mana: 0
     food: 0
-    items: []
+    ids: 
     resolutionIndex: 0
     fullscreen: 0
     sound: 0
+    mouseSensitivity: 5
   playerManager: {fileID: 0}
-  items: []
+  curItems: []
+  itemIDs: []
 --- !u!1001 &974069904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2041,10 +2111,11 @@ MonoBehaviour:
     health: 0
     mana: 0
     food: 0
-    items: []
+    ids: 
     resolutionIndex: 0
     fullscreen: 0
     sound: 0
+    mouseSensitivity: 5
 --- !u!4 &1487334594
 Transform:
   m_ObjectHideFlags: 0
@@ -2266,15 +2337,15 @@ MonoBehaviour:
     health: 0
     mana: 0
     food: 0
-    items: []
+    ids: 
     resolutionIndex: 0
     fullscreen: 0
     sound: 0
+    mouseSensitivity: 5
   player: {fileID: 0}
   autoSaveTimer: 25
   autoSaveEnabled: 0
   playerSave: 0
-  max: 100
 --- !u!114 &1981607722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2837,3 +2908,4 @@ SceneRoots:
   - {fileID: 611563270}
   - {fileID: 801713710}
   - {fileID: 890650396}
+  - {fileID: 499813860}

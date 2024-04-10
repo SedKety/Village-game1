@@ -39,7 +39,7 @@ public class SaveData : MonoBehaviour
     {
         if (playerSave)
         {
-            int i = 0;
+            playerData.ids.Clear();
             playerData.x = player.transform.position.x;
             playerData.y = player.transform.position.y;
             playerData.z = player.transform.position.z;
