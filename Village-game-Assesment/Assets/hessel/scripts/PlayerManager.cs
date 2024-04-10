@@ -30,6 +30,18 @@ public class PlayerManager : MonoBehaviour
     }
     private void Update()
     {
+        if (health >= maxHealth)
+        {
+            health = maxHealth;
+        }
+        if (mana >= maxMana)
+        {
+            mana = maxMana;
+        }
+        if (food >= maxFood)
+        {
+            food = maxFood;
+        }
         HealthRegeneration();
         ManaRegeneration();
         FoodRegeneration();

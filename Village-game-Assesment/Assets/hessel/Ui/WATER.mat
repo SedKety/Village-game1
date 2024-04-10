@@ -43,7 +43,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RippleDensity: 63.15
-    - _RippleSlimness: 15
+    - _RippleSlimness: 5
     - _RippleSpeed: 1.89
     - _WaveScale: 0.5
     - _WaveSpeed: 0.05
