@@ -23,13 +23,16 @@ public class ResourceNodeScript : MonoBehaviour, IDamagable
         if (nodeHealth <= 0)
         {
             Instantiate(itemToDrop, itemspawnpoint.position, Quaternion.identity);
-            Destroy(gameObject);
+            gameObject.GetComponent<Renderer>().enabled = false;
+            gameObject.GetComponent<Collider>().enabled = false;
+            gameObject.GetComponent<AudioSource>().Play();
+            //Destroy(gameObject, 1f);
             int spawnEnemyOrNot = Random.Range(0, 2);
             if (spawnEnemyOrNot == 0 && enemyObject)
             {
                 Instantiate(enemyObject, itemspawnpoint.position, Quaternion.identity);
             }
-
+            Destroy(gameObject, 2f);
         }
     }
 }

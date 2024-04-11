@@ -17,8 +17,6 @@ public class Movement2 : MonoBehaviour
     float verticalInput;
     Vector3 moveDirection;
     Rigidbody rb;
-
-    //Nobe: voor animaties.
     public Animator animator;
     private void Start()
     {
@@ -70,7 +68,6 @@ public class Movement2 : MonoBehaviour
             onGround = false;
         }
     }
-
     private void SpeedControl()
     {
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
@@ -82,7 +79,6 @@ public class Movement2 : MonoBehaviour
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
     }
-
     private void OnCollisionEnter(Collision collision)
     {
         onGround = true;
