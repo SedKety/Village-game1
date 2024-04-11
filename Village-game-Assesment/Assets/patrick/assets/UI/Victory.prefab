@@ -119,7 +119,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 266522623218074811}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -581,7 +581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5887323716855923630
 RectTransform:
   m_ObjectHideFlags: 0
@@ -675,7 +675,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.17969623, y: 0.7628193}
   m_AnchorMax: {x: 0.818, y: 0.95662516}
-  m_AnchoredPosition: {x: -165, y: -272}
+  m_AnchoredPosition: {x: 16, y: -272}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5203913376539384733
@@ -706,7 +706,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Time:'
+  m_text: Insert time here
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0404818ad87804b4a99d19d92acf2ecb, type: 2}
   m_sharedMaterial: {fileID: 2011320270357962910, guid: 0404818ad87804b4a99d19d92acf2ecb,

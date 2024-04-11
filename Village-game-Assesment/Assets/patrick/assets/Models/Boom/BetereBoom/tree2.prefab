@@ -43,8 +43,8 @@ GameObject:
   - component: {fileID: 1388963749133602504}
   - component: {fileID: 481072486321302757}
   - component: {fileID: 4635738227428734324}
-  - component: {fileID: 7682001336561237027}
   - component: {fileID: 3698972879349250049}
+  - component: {fileID: 3640491290590234176}
   m_Layer: 0
   m_Name: Cube.001
   m_TagString: Untagged
@@ -118,28 +118,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7682001336561237027
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5997499497147520885}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4493585093827132993, guid: ad8c8b0819fcc2d4fa81de97aa73a030, type: 3}
 --- !u!114 &3698972879349250049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +136,27 @@ MonoBehaviour:
   itemspawnpoint: {fileID: 1388963749133602504}
   enemyObject: {fileID: 2624815597163382559, guid: 9e1f8b830761a264f807686f00f6c917,
     type: 3}
+--- !u!65 &3640491290590234176
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5997499497147520885}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.84098816, y: 7.236593, z: 0.7904053}
+  m_Center: {x: 0.15061188, y: 3.6182964, z: -0.027282715}
 --- !u!1 &6735352009637576813
 GameObject:
   m_ObjectHideFlags: 0

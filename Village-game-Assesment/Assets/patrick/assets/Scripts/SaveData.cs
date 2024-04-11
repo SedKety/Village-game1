@@ -10,14 +10,17 @@ public class SaveData : MonoBehaviour
 {
     public PlayerData playerData;
     public GameObject player;
-    private string path;
+    private string path, path2;
     public int autoSaveTimer = 25;
     public bool autoSaveEnabled;
     public bool playerSave;
+    public BestTimes bestTimes;
     void Start()
     {
         path = Application.dataPath + Path.AltDirectorySeparatorChar + "SaveData.json";
+        path2 = Application.dataPath + Path.AltDirectorySeparatorChar + "BestTimes.json";
         playerData = Load();
+        bestTimes = LoadTimes();
         player = GameObject.FindGameObjectWithTag("Player");
         if (playerSave)
         {
@@ -57,12 +60,18 @@ public class SaveData : MonoBehaviour
         string json = JsonUtility.ToJson(playerData);
         byte[] bytes = Encoding.UTF8.GetBytes(json);
         string encryptedJson = Convert.ToBase64String(bytes);
+        string bestTime = JsonUtility.ToJson(bestTimes);
         Debug.Log(json);
 
         using (StreamWriter sw = new StreamWriter(path))
         {
             sw.Write(encryptedJson);
         }
+        using (StreamWriter sw = new StreamWriter(path2))
+        {
+            sw.Write(bestTime);
+        }
+        Debug.Log(bestTime);
     }
     public PlayerData Load()
     {
@@ -82,6 +91,25 @@ public class SaveData : MonoBehaviour
         else
         {
             data = new PlayerData();
+        }
+        return data;
+    }
+    public BestTimes LoadTimes()
+    {
+        string json = string.Empty;
+        BestTimes data;
+
+        if (File.Exists(path))
+        {
+            using (StreamReader reader = new StreamReader(path2))
+            {
+                json = reader.ReadToEnd();
+            }
+            data = JsonUtility.FromJson<BestTimes>(json);
+        }
+        else
+        {
+            data = new BestTimes();
         }
         return data;
     }

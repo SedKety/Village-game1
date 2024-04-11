@@ -14,23 +14,24 @@ public class BrainbossButton : MonoBehaviour
     public List<int> materialid = new List<int>();
     public List<int> materials = new List<int>();
     public string[] material;
+    public int curIndex = 0;
     public void Button()
     {
         var inventory = FindAnyObjectByType<InventoryManager>();
         foreach(var item in inventory.GetComponent<InventoryManager>().items)
         {
-            if(materialid.Contains(item.id))
+            if (materialid.Contains(item.id) && materialid[curIndex] == item.id)
             {
-                int curIndex = materials.IndexOf(item.id);
                 inventory.GetComponent<InventoryManager>().OnItemRemove(item);
                 inventory.GetComponent<InventoryManager>().ListItems();
                 offered[curIndex] += 1;
                 neededText[curIndex].text = offered[curIndex].ToString() + "/" + needed[curIndex].ToString() + " " + material[curIndex];
                 if (offered[curIndex] >= needed[curIndex])
                 {
-                    materialid.RemoveAt(curIndex);
+                    materials[curIndex] = 0;
+                    curIndex++;
                 }
-                if (materialid.Count == 0)
+                if (materials.Distinct().Count() == 1)
                 {
                     Repair();
                 }

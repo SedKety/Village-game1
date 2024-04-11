@@ -23,6 +23,7 @@ TagManager:
   - Hitmarker
   - DropSpot
   - Tree
+  - Dark
   layers:
   - Default
   - TransparentFX

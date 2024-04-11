@@ -2457,11 +2457,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a517a715ef44f9a479c911057fa54061,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3714637556943910901}
+      addedObject: {fileID: 1703262222888336068}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a517a715ef44f9a479c911057fa54061,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1703262222888336068}
+      addedObject: {fileID: 2837430949631263066}
   m_SourcePrefab: {fileID: 100100000, guid: a517a715ef44f9a479c911057fa54061, type: 3}
 --- !u!4 &4786273542501038180 stripped
 Transform:
@@ -2674,13 +2674,27 @@ MonoBehaviour:
     health: 0
     mana: 0
     food: 0
-    items: []
+    ids: 
     resolutionIndex: 0
     fullscreen: 0
     sound: 0
     mouseSensitivity: 0
   playerManager: {fileID: 9214548732863000688}
-  items: []
+  curItems: []
+  itemIDs:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: c30558fc0251e9646b6815c9dced0e4a, type: 2}
+  - {fileID: 11400000, guid: 6796a90f46ee92848b959c30c050fca7, type: 2}
+  - {fileID: 11400000, guid: 0b30a02b7e914af44b2a276a8b721e2f, type: 2}
+  - {fileID: 11400000, guid: 14d8ffa633605c74095b2b425f15a50a, type: 2}
+  - {fileID: 11400000, guid: 77fe510d7b91a60419437b3aa447a74e, type: 2}
+  - {fileID: 11400000, guid: 54c1ce4dda55b404dbac91e2ea02bce1, type: 2}
+  - {fileID: 11400000, guid: 69560389279f0be45939e61723a9b844, type: 2}
+  - {fileID: 11400000, guid: 9553c5131eed0c641bf35023ae31767e, type: 2}
+  - {fileID: 11400000, guid: 573fdfad439096043bd60e416a6b7ae3, type: 2}
+  - {fileID: 11400000, guid: 86d83fc93ca16324a8785bfce3463be5, type: 2}
+  - {fileID: 11400000, guid: af2ea36c399eccf4dbc0a439d8f6ded8, type: 2}
+  - {fileID: 11400000, guid: 81fa4cf9bbd04f248846e532c11dd59e, type: 2}
 --- !u!114 &2133364898525823941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2697,21 +2711,6 @@ MonoBehaviour:
   mainMenu: {fileID: 0}
   mouseSensitivity: 10
   canILook: 1
---- !u!114 &3714637556943910901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5271343246489920222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ac597a2f83dccb41b52097ec2e825d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkForTrees: {fileID: 0}
-  billboard: {fileID: 0}
-  tree: {fileID: 0}
 --- !u!114 &1703262222888336068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2724,6 +2723,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f275affbaac9b4f45bb296060744f080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &2837430949631263066
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5271343246489920222}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 11.00647
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &9029006665952445986 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4083501151425157549, guid: a517a715ef44f9a479c911057fa54061,
