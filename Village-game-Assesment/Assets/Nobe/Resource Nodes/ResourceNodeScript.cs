@@ -26,7 +26,6 @@ public class ResourceNodeScript : MonoBehaviour, IDamagable
             gameObject.GetComponent<Renderer>().enabled = false;
             gameObject.GetComponent<Collider>().enabled = false;
             gameObject.GetComponent<AudioSource>().Play();
-            //Destroy(gameObject, 1f);
             int spawnEnemyOrNot = Random.Range(0, 2);
             if (spawnEnemyOrNot == 0 && enemyObject)
             {
