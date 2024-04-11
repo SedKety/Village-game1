@@ -136,6 +136,7 @@ MonoBehaviour:
   itemspawnpoint: {fileID: 1388963749133602504}
   enemyObject: {fileID: 2624815597163382559, guid: 9e1f8b830761a264f807686f00f6c917,
     type: 3}
+  destroyParent: 1
 --- !u!65 &3640491290590234176
 BoxCollider:
   m_ObjectHideFlags: 0

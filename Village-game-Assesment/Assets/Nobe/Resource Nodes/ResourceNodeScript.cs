@@ -12,6 +12,7 @@ public class ResourceNodeScript : MonoBehaviour, IDamagable
     [SerializeField] Transform itemspawnpoint;
 
     public GameObject enemyObject;
+    public bool destroyParent;
 
     public void Damagable(int dmg, GameObject weaponUsed)
     {
@@ -31,7 +32,14 @@ public class ResourceNodeScript : MonoBehaviour, IDamagable
             {
                 Instantiate(enemyObject, itemspawnpoint.position, Quaternion.identity);
             }
-            Destroy(gameObject, 2f);
+            if (destroyParent)
+            {
+                Destroy(gameObject.transform.parent);
+            }
+            else
+            {
+                Destroy(gameObject, 2f);
+            }
         }
     }
 }

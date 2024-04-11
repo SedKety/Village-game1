@@ -1071,7 +1071,7 @@ MonoBehaviour:
   maxEnemyHp: 100
   navMeshAgent: {fileID: 0}
   itemToDrop:
-  - {fileID: 6709380891973206443, guid: 4bfc883ffd2ec284f9acb012f3db52d4, type: 3}
+  - {fileID: 227582260092489592, guid: fdc38f008bc6da24a898e646096cb5ee, type: 3}
   - {fileID: 6709380891973206443, guid: 4bfc883ffd2ec284f9acb012f3db52d4, type: 3}
   itemspawnpoint: {fileID: 6221532613906733841}
   layerToWalkOn:
