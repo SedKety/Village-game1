@@ -96,16 +96,16 @@ public class SaveData : MonoBehaviour
     }
     public BestTimes LoadTimes()
     {
-        string json = string.Empty;
+        string jsonTimes = string.Empty;
         BestTimes data;
 
         if (File.Exists(path))
         {
             using (StreamReader reader = new StreamReader(path2))
             {
-                json = reader.ReadToEnd();
+                jsonTimes = reader.ReadToEnd();
             }
-            data = JsonUtility.FromJson<BestTimes>(json);
+            data = JsonUtility.FromJson<BestTimes>(jsonTimes);
         }
         else
         {

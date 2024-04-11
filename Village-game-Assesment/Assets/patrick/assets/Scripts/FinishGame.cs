@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
-using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +14,7 @@ public class FinishGame : MonoBehaviour
     {
         Time.timeScale = 0f;
         finishScreen.SetActive(true);
+        FindAnyObjectByType<InventoryManager>().GetComponent<Canvas>().enabled = false;
         timeText = FindAnyObjectByType<TimeText>().gameObject;
         timeText.GetComponent<TimeText>().FinishTime(Time.timeSinceLevelLoad);
 
