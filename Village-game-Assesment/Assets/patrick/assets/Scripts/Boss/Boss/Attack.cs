@@ -7,8 +7,10 @@ public class Attack : MonoBehaviour
     public bool isTouchingAttack;
     public GameObject barrel;
     public bool isSkyAttack;
+    RaycastHit hit;
     private void Start()
     {
+        StartCoroutine(DespawnTimer());
         if (isSkyAttack)
         {
             Instantiate(barrel, new Vector3(transform.position.x, transform.position.y + 50, transform.position.z), transform.rotation);
@@ -16,6 +18,10 @@ public class Attack : MonoBehaviour
         else
         {
             return;
+        }
+        if(Physics.Raycast(transform.position, Vector3.down, out hit))
+        {
+            transform.transform.up = hit.normal;
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -38,5 +44,10 @@ public class Attack : MonoBehaviour
         {
             FindAnyObjectByType<PlayerManager>().DoDamage(barrel.GetComponent<Attack2>().amountOfDamage);
         }
+    }
+    public IEnumerator DespawnTimer()
+    {
+        yield return new WaitForSeconds(4);
+        Destroy(gameObject);
     }
 }

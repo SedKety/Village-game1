@@ -12,7 +12,7 @@ public class Firebal : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player") && !other.CompareTag("ResourceNodeCollider") && !other.CompareTag("EnemyChecker"))
+        if (other.CompareTag("Player") == false && other.CompareTag("EnemyChecker") == false)
         {
             if (other.transform.GetComponent<IDamagable>() != null)
             {
@@ -29,11 +29,10 @@ public class Firebal : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.CompareTag("Player") == false)
+        if (collision.collider.CompareTag("Player") == false && collision.collider.CompareTag("EnemyChecker") == false)
         {
             if (collision.transform.GetComponent<IDamagable>() != null)
             {

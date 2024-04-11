@@ -15,7 +15,9 @@ MonoBehaviour:
   id: 11
   itemSprite: {fileID: 21300000, guid: 8b551917c6060284885a4afddfbb1095, type: 3}
   itemName: Greg
-  itemDescription: Greg :D
+  itemDescription: 'Favorite food: sticks. dont let him eat any though. very dangerous,
+    upon contact with just one stick he grows and goes insane. give him 3 and let
+    terrors unfold'
   itemPrefab: {fileID: 6709380891973206443, guid: 4bfc883ffd2ec284f9acb012f3db52d4,
     type: 3}
   type: 0

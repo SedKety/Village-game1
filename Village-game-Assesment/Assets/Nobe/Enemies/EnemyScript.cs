@@ -7,6 +7,7 @@ public abstract class EnemyScript : MonoBehaviour, IDamagable
 {
     public int enemyDmg;
     public int enemyHp;
+    public int maxEnemyHp;
 
     public NavMeshAgent navMeshAgent;
 
@@ -16,13 +17,13 @@ public abstract class EnemyScript : MonoBehaviour, IDamagable
     public LayerMask layerToWalkOn;
 
     public bool shouldLookAtPlayer;
-    public void Start()
+    public virtual void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         shouldLookAtPlayer = false;
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public virtual void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Player"))
         {
@@ -44,11 +45,5 @@ public abstract class EnemyScript : MonoBehaviour, IDamagable
             }
             Destroy(gameObject);
         }
-    }
-
-    public IEnumerator despawnTimer()
-    {
-        yield return new WaitForSeconds(100);
-        Destroy(gameObject);
     }
 }
