@@ -61,8 +61,6 @@ public class GregScript : EnemyScript
     }
     public override void OnCollisionEnter(Collision collision)
     {
-        print(collision);
-        base.OnCollisionEnter(collision);
         if (collision.collider.CompareTag("Stick"))
         {
             OnLifeStageIncrease();
@@ -87,6 +85,13 @@ public class GregScript : EnemyScript
                 Destroy(gameObject);
             }
             hasSpawned = true;
+        }
+    }
+    public void OnCollisionStay(Collision collision)
+    {
+        if(collision.gameObject.GetComponent<IDamagable>() != null)
+        {
+            collision.gameObject.GetComponent<IDamagable>().Damagable(enemyDmg, gameObject);
         }
     }
 }

@@ -572,6 +572,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c760475bf7f66f49a31657f53169d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &132962891
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3724914066460095210, guid: cfad61551a8a4d14480ede1ddfc492c1,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724914066460095210, guid: cfad61551a8a4d14480ede1ddfc492c1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221532613906733841, guid: cfad61551a8a4d14480ede1ddfc492c1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 483.69135
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221532613906733841, guid: cfad61551a8a4d14480ede1ddfc492c1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 81.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221532613906733841, guid: cfad61551a8a4d14480ede1ddfc492c1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1083.4576
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221532613906733841, guid: cfad61551a8a4d14480ede1ddfc492c1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221532613906733841, guid: cfad61551a8a4d14480ede1ddfc492c1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221532613906733841, guid: cfad61551a8a4d14480ede1ddfc492c1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221532613906733841, guid: cfad61551a8a4d14480ede1ddfc492c1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221532613906733841, guid: cfad61551a8a4d14480ede1ddfc492c1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221532613906733841, guid: cfad61551a8a4d14480ede1ddfc492c1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221532613906733841, guid: cfad61551a8a4d14480ede1ddfc492c1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6709380891973206443, guid: cfad61551a8a4d14480ede1ddfc492c1,
+        type: 3}
+      propertyPath: m_Name
+      value: BossGreg
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cfad61551a8a4d14480ede1ddfc492c1, type: 3}
 --- !u!1001 &133400690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11130,3 +11208,4 @@ SceneRoots:
   - {fileID: 1883774181}
   - {fileID: 1609303695}
   - {fileID: 274145142}
+  - {fileID: 132962891}
